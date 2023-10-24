@@ -17,37 +17,23 @@
 			</header>
 
 			<div class="inbox">
-				<div class="request">
-					<div class="request-header">
-						<div>
-							<h3>Student Request 1</h3>
-							<p>Student Name: Student-1</p>
-							<p>Student ID: 202201254</p>
+				<% inbox.forEach((stud)=>{ %>
+					<div class="request">
+						<div class="request-header">
+							<div>
+								<h3>Student Request 1</h3>
+								<p>Student Name: <%= stud.studName %></p>
+								<p>Student ID: <%= stud.studId %></p>
+							</div>
+							<div class="buttons">
+								<button class="button issue">Accept</button>
+								<button class="button discard">Discard</button>
+								<button class="button add">+</button>
+							</div>
 						</div>
-						<div class="buttons">
-							<button class="button issue">Accept</button>
-							<button class="button discard">Discard</button>
-							<button class="button add">+</button>
-						</div>
+						<p>Reason for Visit: <%= stud.reasonForVisit %></p>
 					</div>
-					<p>Reason for Visit: Campus Tour</p>
-				</div>
-
-				<div class="request">
-					<div class="request-header">
-						<div>
-							<h3>Student Request 2</h3>
-							<p>Student Name: Student-2</p>
-							<p>Student ID: 202201237</p>
-						</div>
-						<div class="buttons">
-							<button class="button issue">Accept</button>
-							<button class="button discard">Discard</button>
-							<button class="button add">+</button>
-						</div>
-					</div>
-					<p>Reason for Visit: Meeting with Prof. Kalyan</p>
-				</div>
+				<% }) %>
 			</div>
 		</div>
 	</body>

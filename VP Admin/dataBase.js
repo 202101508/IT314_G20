@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 export let records;
+export let inbox;
 const {Schema} = mongoose;
 
-mongoose.connect("mongodb://127.0.0.1:27017/admin_records");
+mongoose.connect("mongodb://127.0.0.1:27017/admin");
 
 const recordSchema = new Schema({
     Id: Number,
@@ -42,11 +43,32 @@ const Record = mongoose.model("Record", recordSchema);
 //     console.log("Added successfully.");
 // });
 
-// Record.find().then((records)=>{
-//     console.log(records);
-//     export {records as records};
-// });
-
 records = await Record.find();
 
-console.log(records);
+const inboxSchema = new Schema({
+    studName: String,
+    studId: String,
+    reasonForVisit: String
+});
+
+const Inbox = mongoose.model("Inbox", inboxSchema);
+
+// Inbox.insertMany([
+//     {
+//         studName: "Bhavesh Baraiya",
+//         studId: "202101241",
+//         reasonForVisit: "Campus tour"
+//     },
+//     {
+//         studName: "Smeet Agrawal",
+//         studId: "202101237",
+//         reasonForVisit: "Hostel and cafeteria inspection"
+//     },
+//     {
+//         studName: "priyesh Tandel",
+//         studId: "202101222",
+//         reasonForVisit: "Parent meating"
+//     }
+// ]);
+
+inbox = await Inbox.find();

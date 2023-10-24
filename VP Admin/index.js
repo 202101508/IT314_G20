@@ -1,7 +1,9 @@
 import express from "express";
-import {records} from "./dataBase.js";
+import { records } from "./dataBase.js";
+import { inbox } from "./dataBase.js";
 
 // console.log(records);
+// console.log(inbox);
 
 const port = 3000;
 const app = express();
@@ -9,7 +11,7 @@ const app = express();
 app.use(express.static("public"));
 
 app.get("/inbox", (req, res) => {
-    res.render("vp_admin_inbox.ejs", {});
+    res.render("vp_admin_inbox.ejs", {inbox});
 });
 
 app.get("/records", (req, res) => {
