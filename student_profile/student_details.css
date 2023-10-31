@@ -138,10 +138,10 @@ input:checked ~ .slide{
 .student_img {
     border-radius: 50%;
     object-fit: cover;
-    width: 100px; /* Set the width as per your preference */
-    height: 100px; /* Set the height as per your preference */
+    width: 100px; 
+    height: 100px; 
     float: left;
-    margin-right: 50px; /* Add some space between image and text */
+    margin-right: 50px; 
 }
 
 .student_name{
