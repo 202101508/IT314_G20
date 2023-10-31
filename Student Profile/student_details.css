@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --navbar-height: 60px;
+}
+/* Navigation Bar */
+ #navbar{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+}
+#navbar ::before{
+    content: "";
+    background-color: gray;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+/* Navigation Bar: Logo and Image */
+#logo{
+    
+margin: 5px 5px;
+}
+#logo img{
+    height: 50px;
+    width: 110px;
+    margin: 3px 5px;
+}
+/* Navigation Bar : List Styling */
+#navbar ul{
+    display: flex;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1rem;
+}
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 10px;
+    border-radius: 20 px;
+    text-decoration: none;
+}
+#navbar ul li a:hover{
+  color: black;
+  background-color: white;
+  width:auto;
+  border-radius: 20px;
+}
+
+/*---------------Navigation Bar Complete-----------*/
+/*----------------Student Information--------------*/
+
+.all_section{
+    
+padding-left: 10%;
+}
+.p_gi{
+    display: flex;
+}
+.profile{
+    /* position:absolute; */
+    margin: 5px;
+    padding:5px;
+    width: 25%;
+    border-color: black;
+    border-radius: 10px;
+    border: solid;
+}
+.qwerty{
+    text-align: center;
+    font-size: x-large;
+    color: blue;
+    margin: 5px;
+    padding: 5px;
+}
+.student_img{
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.student_name{
+    text-align: center;
+}
+.row1{
+    margin: 5px;
+    padding: 5px;
+    border-bottom: solid;
+    border-color: black;
+}
+.row{
+    padding-left: 10%;
+    margin: 7px;
+    padding: 9px;
+}
+.card_1{
+    padding-top: 5px;
+    
+}
+.mb-0{
+    margin: 3px;
+    padding: 3px;
+}
+.pr-1{
+    margin: 2px;
+    padding:2px;
+}
+.general_info{
+    padding-left: 10%;
+    width: 100%;
+    text-align: center;
+}
+.general_info table{
+    padding-top: 10px;
+    border-color: black;
+    border-radius: 10px;
+    border: solid;
+}
+.general_info table tbody tr,td{
+    /* padding-right: 40px; */
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.table1{
+    margin-left: 10%;
+    margin-top: 25px;
+    padding: 5px;
+    width: 60%;
+    border: solid;
+    border-radius: 10px;
+}
+/* .card2{
+    
+} */
+.other_info{
+    margin-left: 10%;
+    margin-top: 25px;
+    padding: 5px;
+    width: 60%;
+    border: solid;
+    border-radius: 10px;
+}
