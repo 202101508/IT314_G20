@@ -3,7 +3,7 @@ export let records;
 export let inbox;
 const { Schema } = mongoose;
 
-mongoose.connect("mongodb://127.0.0.1:27017/admin");
+mongoose.connect("mongodb://127.0.0.1:27017/hostelEase");
 
 const recordSchema = new Schema({
 	Id: Number,
