@@ -18,6 +18,10 @@ $("#reset").click((event) => {
 	location.assign("/forgot-passwd");
 });
 
+$(".remove").click((event) => {
+	$('.remove').text('');
+});
+
 $("#toggle.pointer").click((event) => {
 	toggle();
 });

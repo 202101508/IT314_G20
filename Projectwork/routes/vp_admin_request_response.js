@@ -5,7 +5,7 @@ module.exports = function (app, authenticateUser) {
 		(async () => {
 			try {
 				const inbox = await Data.fetchInbox();
-				res.render("vp_admin_inbox.ejs", { inbox });
+				res.render("vp_admin_inbox", { inbox });
 			} catch (err) {
 				throw err;
 			}
@@ -16,7 +16,7 @@ module.exports = function (app, authenticateUser) {
 		(async () => {
 			try {
 				const records = await Data.fetchRecords();
-				res.render("vp_admin_records.ejs", { records });
+				res.render("vp_admin_records", { records });
 			} catch (err) {
 				throw err;
 			}

@@ -1,93 +1,125 @@
 <%- include("partials/header.ejs") %>
 
-<div id="container" class="container">
-    <div class="row">
-        <div class="col align-items-center flex-col sign-up">
-            <div class="form-wrapper align-items-center">
-                <div class="form sign-up">
-                    <form action="/register" method="POST" class="input-group">
-                        <input type="text" placeholder="Username" id="Username" class='bx bx-mail-send' name="username">
-                        <input type="email" placeholder="Email" id="Email" class='bx bx-mail-send' name="email">
-                        <input type="password" placeholder="Password" id="Passwd" class='bx bxs-lock-alt' name="password">
-                        <input type="password" placeholder="Confirm password" id="Conf-Passwd" class='bx bxs-lock-alt' name="confPasswd">
-                        <% if(locals.msg){ %>
-                            <p class="msg"> <%= msg %></p>
-                        <% } %>
-                        <input class="button bx" type="submit" Value="Sign up">
-                    </form>
+<div
+	id="container"
+	class="container">
+	<div class="row">
+		<div class="col align-items-center flex-col sign-up">
+			<div class="form-wrapper align-items-center">
+				<div class="form sign-up">
+					<form
+						action="/register"
+						method="POST"
+						class="input-group">
+						<input
+							type="text"
+							placeholder="Username"
+							id="Username"
+							class="bx bx-mail-send"
+							name="username" />
+						<input
+							type="email"
+							placeholder="Email"
+							id="Email"
+							class="bx bx-mail-send"
+							name="email" />
+						<input
+							type="password"
+							placeholder="Password"
+							id="Passwd"
+							class="bx bxs-lock-alt"
+							name="password" />
+						<input
+							type="password"
+							placeholder="Confirm password"
+							id="Conf-Passwd"
+							class="bx bxs-lock-alt"
+							name="confPasswd" />
+						<input
+							class="button bx"
+							type="submit"
+							Value="Sign up" />
+					</form>
 
-                    <p>
-                        <span>
-                            Already have an account?
-                        </span>
-                        <b id="toggle" class="pointer">
-                            Sign in here
-                        </b>
-                    </p>
-                </div>
-            </div>
-        
-        </div>
+					<p>
+						<span> Already have an account? </span>
+						<b
+							id="toggle"
+							class="pointer">
+							Sign in here
+						</b>
+					</p>
+				</div>
+			</div>
+		</div>
 
-        <div class="col align-items-center flex-col sign-in">
-            <div class="form-wrapper align-items-center">
-                <div class="form sign-in">
-                    <form action="/login" method="POST" class="input-group">
-                        <input type="text" placeholder="Username" id="username " class='bx' name="username">
-                        <input type="password" placeholder="Password" id="password" class='bx' name="password">
-                        <input class="button bx" type="submit" Value="Sign in">
-                        <% if(locals.failure){ %>
-                            <p class="msg"> <%= failure %></p>
-                        <% } %>
-                                                  
-                    </form>
-                    
-                    <p>
-                        <b action="/forgot-passwd" id="reset" class="pointer" method="GET">
-                            Forgot password?
-                        </b>
-                    </p>
-                    <p>
-                        <span>
-                            Don't have an account?
-                        </span>
-                        <b id="toggle" class="pointer">
-                            Sign up here
-                        </b>
-                    </p>
-                </div>
-            </div>
-            <div class="form-wrapper">
-    
-            </div>
-        </div>
-    </div>
+		<div class="col align-items-center flex-col sign-in">
+			<div class="form-wrapper align-items-center">
+				<div class="form sign-in">
+					<form
+						action="/login"
+						method="POST"
+						class="input-group">
+						<input
+							type="text"
+							placeholder="Username"
+							id="username "
+							class="bx"
+							name="username" />
+						<input
+							type="password"
+							placeholder="Password"
+							id="password"
+							class="bx"
+							name="password" />
+						<input
+							class="button bx"
+							type="submit"
+							Value="Sign in" />
+						<% if(locals.failure){ %>
+						<p class="msg remove pointer"><%= failure %></p>
+						<% } %> <% if (locals.messages && locals.messages.error) { %>
+						<p class="msg remove pointer"><%= locals.messages.error %></p>
+						<% } %>
+					</form>
+					<p>
+						<b
+							action="/forgot-passwd"
+							id="reset"
+							class="pointer"
+							method="GET">
+							Forgot password?
+						</b>
+					</p>
+					<p>
+						<span> Don't have an account? </span>
+						<b
+							id="toggle"
+							class="pointer">
+							Sign up here
+						</b>
+					</p>
+				</div>
+			</div>
+			<div class="form-wrapper"></div>
+		</div>
+	</div>
 
-    <div class="row content-row">
-        <div class="col align-items-center flex-col">
-            <div class="text sign-in">
-                <h2>
-                    Welcome
-                </h2>
+	<div class="row content-row">
+		<div class="col align-items-center flex-col">
+			<div class="text sign-in">
+				<h2>Welcome</h2>
+			</div>
+			<div class="img sign-in"></div>
+		</div>
 
-            </div>
-            <div class="img sign-in">
-    
-            </div>
-        </div>
-
-        <div class="col align-items-center flex-col">
-            <div class="img sign-up">
-            
-            </div>
-            <div class="text sign-up">
-                <h2>
-                    Join with us
-                </h2>
-
-            </div>
-        </div>
-    </div>
+		<div class="col align-items-center flex-col">
+			<div class="img sign-up"></div>
+			<div class="text sign-up">
+				<h2>Join with us</h2>
+			</div>
+		</div>
+	</div>
 </div>
 
-    <%- include("partials/footer.ejs") %>
+<%- include("partials/footer.ejs") %>

@@ -1,8 +1,21 @@
 const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
+
 const { Schema } = mongoose;
 
 mongoose.connect("mongodb://127.0.0.1:27017/hostelEase");
 
+//User schema
+const userSchema = new Schema({
+	username: String,
+	email: String,
+	password: String,
+});
+
+userSchema.plugin(passportLocalMongoose);
+const User = mongoose.model("User", userSchema);
+
+//Records Schema
 const recordSchema = new Schema({
 	Id: Number,
 	Status: String,
@@ -17,11 +30,9 @@ async function fetchRecords() {
 		const records = await Record.find();
 		return records;
 	} catch (error) {
-		// Handle any errors that might occur during the database query
 		throw error;
 	}
 }
-exports.fetchRecords = fetchRecords;
 
 //Inbox schema
 const inboxSchema = new Schema({
@@ -41,8 +52,14 @@ async function fetchInbox() {
 		throw err;
 	}
 }
-exports.fetchInbox = fetchInbox;
 
+module.exports = {
+	User,
+	Record,
+	Inbox,
+	fetchInbox,
+	fetchRecords,
+};
 
 // const model = require("./data");
 
