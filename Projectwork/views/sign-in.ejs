@@ -36,6 +36,10 @@
                         <input type="text" placeholder="Username" id="username " class='bx' name="username">
                         <input type="password" placeholder="Password" id="password" class='bx' name="password">
                         <input class="button bx" type="submit" Value="Sign in">
+                        <% if(locals.failure){ %>
+                            <p class="msg"> <%= failure %></p>
+                        <% } %>
+                                                  
                     </form>
                     
                     <p>

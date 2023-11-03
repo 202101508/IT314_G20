@@ -1,14 +1,14 @@
-import express from "express";
-import ejs from "ejs";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
+if (process.env.NODE_ENV !== "production") {
+	require("dotenv").config();
+}
 
-//sessions and cookies
-import session from "express-session";
-import passport from "passport";
-import passportLocalMongoose from "passport-local-mongoose";
-
-import router from "./routes/vp_admin_request_response.js";
+const express = require("express");
+const ejs = require("ejs");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const app = express();
 const port = 3000;
@@ -17,11 +17,10 @@ const { Schema } = mongoose;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-app.use("/records", router);
 
 app.use(
 	session({
-		secret: "This is hostelEase.",
+		secret: process.env.SESSION_SECRET,
 		resave: false,
 		saveUninitialized: false,
 	})
@@ -30,7 +29,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://127.0.0.1:27017/hostelEase");
+// mongoose.connect("mongodb://127.0.0.1:27017/hostelEase");
 
 const userSchema = new Schema({
 	username: String,
@@ -62,7 +61,7 @@ app.get("/forgot-passwd", (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-	req.logout(function (err) {
+	req.logout((err) => {
 		if (err) {
 			console.log(err);
 		}
@@ -70,35 +69,43 @@ app.get("/logout", (req, res) => {
 	});
 });
 
-app.get("/nextPage", (req, res) => {
-	console.log("Next Page.");
+const authenticateUser = (req, res, next) => {
 	if (req.isAuthenticated()) {
-		res.send("Authenticated!");
+		return next();
 	} else {
-		res.redirect("/");
+		res.redirect("/login");
 	}
+}
+
+app.get("/nextPage", authenticateUser, (req, res) => {
+	console.log("Next Page.");
+	res.send("Authenticated!");
 });
 
-// app.post('/login', passport.authenticate('local', { successRedirect:'/',
-//                                                     failureRedirect: '/login' }));
-
-app.post("/login", (req, res) => {
+app.post("/login", (req, res, next) => {
 	const user = new User({
 		username: req.body.username,
 		password: req.body.password,
 	});
-
-	req.login(user, function (err) {
+	passport.authenticate("local", (err, user, info) => {
 		if (err) {
 			console.log(err);
-			res.redirect("/");
-		} else {
-			passport.authenticate("local")(req, res, function (err) {
-				if (err) console.log("Err : ", err);
-				res.redirect("/nextPage");
-			});
+			return res.redirect("/");
 		}
-	});
+		if (!user) {
+			// Authentication failed, user doesn't exist or incorrect credentials
+			console.log("Authentication failed. Incorrect email or password.");
+			return res.render("sign-in", {failure: "Invalid email or password"}); // You can redirect to a login page or display an error message.
+		}
+		req.login(user, (loginErr) => {
+			if (loginErr) {
+				console.log(loginErr);
+				return res.redirect("/");
+			}
+			// Authentication succeeded, redirect to the next page
+			return res.redirect("/nextPage");
+		});
+	})(req, res, next);
 });
 
 app.post("/register", (req, res) => {
@@ -107,18 +114,20 @@ app.post("/register", (req, res) => {
 	User.register(
 		{ username: req.body.username, email: req.body.email },
 		passwd,
-		function (err, user) {
+		(err, user) => {
 			if (err) {
 				console.log(err);
 				res.redirect("/");
 			} else {
-				passport.authenticate("local")(req, res, function () {
+				passport.authenticate("local")(req, res, () => {
 					res.redirect("/nextPage");
 				});
 			}
 		}
 	);
 });
+
+require("./routes/vp_admin_request_response")(app, authenticateUser);
 
 app.listen(port, (err) => {
 	if (err) throw err;

@@ -1,17 +1,25 @@
-import express from "express";
-import { records } from "./dataBase.js";
-import { inbox } from "./dataBase.js";
+const Data = require("./dataBase.js");
 
-const router = express.Router();
+module.exports = function (app, authenticateUser) {
+	app.get("/inbox", authenticateUser, (req, res) => {
+		(async () => {
+			try {
+				const inbox = await Data.fetchInbox();
+				res.render("vp_admin_inbox.ejs", { inbox });
+			} catch (err) {
+				throw err;
+			}
+		})();
+	});
 
-// app.use(express.static("public"));
-
-router.get("/inbox", (req, res) => {
-    res.render("vp_admin_inbox.ejs", {inbox});
-});
-
-router.get("/records", (req, res) => {
-    res.render("vp_admin_records.ejs", {records});
-});
-
-module.exports=router;
+	app.get("/records", authenticateUser, (req, res) => {
+		(async () => {
+			try {
+				const records = await Data.fetchRecords();
+				res.render("vp_admin_records.ejs", { records });
+			} catch (err) {
+				throw err;
+			}
+		})();
+	});
+};
