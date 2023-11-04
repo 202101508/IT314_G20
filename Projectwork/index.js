@@ -14,11 +14,13 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
 app.set("view engine", "ejs");
+app.use(express.json());
 
 const { authenticateUser } = require("./routes/authentication");
 
 require("./routes/authentication").initializeSession(app);
 require("./routes/vp_admin_request_response")(app, authenticateUser);
+require("./routes/forgot-password")(app);
 
 app.get("/", (req, res) => {
 	res.render("sign-in");
@@ -26,10 +28,6 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
 	res.redirect("/");
-});
-
-app.get("/forgot-passwd", (req, res) => {
-	res.send("<h1>Forgot-Password</h1>");
 });
 
 app.get("/nextPage", authenticateUser, (req, res) => {
