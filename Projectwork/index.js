@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
-const flash = require('express-flash');
+const flash = require("express-flash");
 
 const app = express();
 const port = 3000;
@@ -32,6 +32,21 @@ app.get("/login", (req, res) => {
 
 app.get("/nextPage", authenticateUser, (req, res) => {
 	res.send("Authenticated!");
+});
+
+app.post("/update-profile", (req, res) => {
+	const {
+		studentName,
+		studentId,
+		academicYear,
+		batch,
+		email,
+		gender,
+		bloodGroup,
+		mobileNo,
+	} = req.body;
+
+	res.json({ message: "Profile updated successfully" });
 });
 
 app.listen(port, (err) => {

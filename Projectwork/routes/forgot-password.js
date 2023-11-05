@@ -1,9 +1,9 @@
 const jwt = require("jsonwebtoken");
 const express = require("express");
 const { User } = require("./dataBase");
+const { transporter, mailOptions } = require("./mail-sender");
 
 module.exports = (app) => {
-	
 	app.get("/forgot-password", (req, res) => {
 		res.render("forgot-password");
 	});
@@ -27,10 +27,25 @@ module.exports = (app) => {
 					};
 
 					const secret = process.env.JWT_SECRET + user.salt;
-					const token = jwt.sign(payload, secret, { expiresIn: "10s" });
+					const token = jwt.sign(payload, secret, { expiresIn: "15m" });
 					const link = `http://localhost:3000/reset-password/${user.username}/${token}`;
 
 					console.log(link);
+
+					//Sending mail to user for change password
+					mailOptions.to = user.email;
+					mailOptions.subject = "Link for change password.";
+					mailOptions.text = `Here is your change password link: ${link}`;
+
+					transporter
+						.sendMail(mailOptions)
+						.then((info) => {
+							console.log("Email sent: ", info);
+						})
+						.catch((err) => {
+							throw err;
+						});
+
 					res.send("link has been sent to your email.");
 				}
 			})
@@ -52,16 +67,16 @@ module.exports = (app) => {
 						const payload = jwt.verify(token, secret);
 						res.render("reset-password", { email: user.email });
 					} catch (err) {
-						if(err){
-                            res.send(`<h1> ${err.message} </h1>`);
-                            throw err;
-                        }
+						if (err) {
+							//Token expired
+							res.send(`<h1> ${err.message} </h1>`);
+							throw err;
+						}
 					}
 				}
 			})
 			.catch((err) => {
 				console.log(err);
-
 			});
 	});
 
@@ -78,23 +93,25 @@ module.exports = (app) => {
 					try {
 						const payload = jwt.verify(token, secret);
 
-						(async ()=> {
-                            await user
-							.setPassword(password)
-							.then((user) => {
-                                console.log(user);
-								res.send("Password set.");
-							})
-							.catch((err) => {
-								throw err;
-							})
+						(async () => {
+							await user
+								.setPassword(password)
+								.then((user) => {
+									console.log(user);
+									res.send("Password set.");
+								})
+								.catch((err) => {
+									throw err;
+								});
 
-                           await  user.save()})();
+							await user.save();
+						})();
 					} catch (err) {
-						if(err){
-                            res.send(`<h1> ${err.message} </h1>`);
-                            throw err;
-                        }
+						if (err) {
+							//Invalid signature
+							res.send(`<h1> ${err.message} </h1>`);
+							throw err;
+						}
 					}
 				}
 			})
