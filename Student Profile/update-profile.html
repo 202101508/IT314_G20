@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
-    <link rel="stylesheet" href="student_details.css">
-    <script src="update-profile.js"></script>
-
+    <link rel="stylesheet" href="update-profile.css">
 </head>
 <body>
-    <div class="toggle">
+    <!-- <div class="toggle">
         <input type="checkbox">
         <div class="common top_line"></div>
         <div class="common middle_line"></div>
         <div class="common bottom_line"></div>
-    </div>
-    <div class="slide">
+    </div> -->
+
+    <!----------------- Add Navbar Code here -------------------->
+
+    <!-- <div class="slide">
         <h1>Menu</h1>
         <ul>
             <li><a href="#home"><i class="fas fa-user"></i>Student Information</a></li>
@@ -26,9 +27,12 @@
             <li><a href="emergy.html"><i class="fa-solid fa-truck-medical"></i>Emergency Contacts</a></li>
             <li><a href="upcoming.html"><i class="fa-solid fa-calendar-days"></i>Upcoming Events</a></li>
         </ul>
+    </div> -->
+    <div class="edit_profile">
+        <img class="edit_img" src="edit_logo.jpg" alt="Edit_Logo">
+        <h1 class="edit_profile_text">Edit Profile</h1>
     </div>
-
-    <h1>Edit Profile</h1>
+    
 
     <form id="edit-profile-form" action="/update-profile" method="POST">
         <label for="student-name">Student Name:</label>
