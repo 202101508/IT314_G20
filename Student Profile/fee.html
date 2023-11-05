@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fee Receipt</title>
+    <script src="fee.js"></script>
+    <style>
+        /* CSS styles (same as before) */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(0, 0%, 94%);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(11, 12, 11, 0.689);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button {
+            background-color: #0074d9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fee Receipt</h1>
+    </header>
+    <div class="container">
+        <form id="feeReceiptForm">
+            <label for="semesterSelect">Select Semester:</label>
+            <select id="semesterSelect" name="semester"></select>
+            <button type="submit" id="fetchReceiptButton">Fetch Receipt</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+   
+</body>
+</html>
