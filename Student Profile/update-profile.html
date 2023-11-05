@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="student_details.css">
+    <script src="update-profile.js"></script>
+
+</head>
+<body>
+    <div class="toggle">
+        <input type="checkbox">
+        <div class="common top_line"></div>
+        <div class="common middle_line"></div>
+        <div class="common bottom_line"></div>
+    </div>
+    <div class="slide">
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="#home"><i class="fas fa-user"></i>Student Information</a></li>
+            <li><a href="recept.html"><i class="fa-solid fa-receipt"></i>Fee recept</a></li>
+            <li><a href="#services-container"><i class="fa-regular fa-clipboard"></i>In-out Record</a></li>
+            <li><a href="#client-section"><i class="fa-solid fa-paperclip"></i>Request Box</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-car"></i>Visitation Permition</a></li>
+            <li><a href="emergy.html"><i class="fa-solid fa-truck-medical"></i>Emergency Contacts</a></li>
+            <li><a href="upcoming.html"><i class="fa-solid fa-calendar-days"></i>Upcoming Events</a></li>
+        </ul>
+    </div>
+
+    <h1>Edit Profile</h1>
+
+    <form id="edit-profile-form" action="/update-profile" method="POST">
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" name="student-name" value="Dhruvin Patel">
+        
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" name="student-id" value="202101496">
+        
+        <label for "academic-year">Academic Year:</label>
+        <input type="text" id="academic-year" name="academic-year" value="2021">
+        
+        <label for "batch">Batch:</label>
+        <input type="text" id="batch" name="batch" value="ICT">
+        
+        <label for "email">Email ID:</label>
+        <input type="text" id="email" name="email" value="dhruvinpatel321@gmail.com">
+        
+        <label for "gender">Gender:</label>
+        <input type="text" id="gender" name="gender" value="M">
+        
+        <label for "blood-group">Blood Group:</label>
+        <input type="text" id="blood-group" name="blood-group" value="A +ve">
+        
+        <label for "mobile-no">Mobile No.:</label>
+        <input type="text" id="mobile-no" name="mobile-no" value="1234567890">
+        
+        <input type="submit" value="Update Profile">
+    </form>
+
+   
+</body>
+</html>
