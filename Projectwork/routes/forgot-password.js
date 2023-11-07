@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const express = require("express");
 const { User } = require("./dataBase");
 const { transporter, mailOptions } = require("./mail-sender");
 
@@ -46,7 +45,7 @@ module.exports = (app) => {
 							throw err;
 						});
 
-					res.send("link has been sent to your email.");
+					res.render("mail-confirmation");
 				}
 			})
 			.catch((err) => {
@@ -60,7 +59,7 @@ module.exports = (app) => {
 		User.findOne({ username: username }, { salt: 1, email: 1, username: 1 })
 			.then((user) => {
 				if (!user) {
-					res.send("User not exist");
+					res.send("<h1> User not exist </h1>");
 				} else {
 					const secret = process.env.JWT_SECRET + user.salt;
 					try {
@@ -82,12 +81,12 @@ module.exports = (app) => {
 
 	app.post("/reset-password/:username/:token", (req, res) => {
 		const { username, token } = req.params;
-		const { password, confPassword } = req.body;
+		const { password } = req.body;
 
 		User.findOne({ username: username }, { salt: 1, email: 1, username: 1 })
 			.then((user) => {
 				if (!user) {
-					res.send("User not exist");
+					res.send("<h1> User not exist </h1>");
 				} else {
 					const secret = process.env.JWT_SECRET + user.salt;
 					try {

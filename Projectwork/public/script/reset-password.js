@@ -1,7 +1,3 @@
-$(".err").click((event)=>{
-    $(".err").text('');
-});
-
 //Confirm password validation
 $("#confPassword").click((event) => {
     console.log("clicked");
@@ -23,4 +19,3 @@ function validatePassword() {
 
 password.change(validatePassword);
 confirm_password.keyup(validatePassword);
-

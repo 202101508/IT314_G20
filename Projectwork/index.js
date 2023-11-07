@@ -24,6 +24,7 @@ require("./routes/forgot-password")(app);
 
 app.get("/", (req, res) => {
 	res.render("sign-in");
+	// res.render("mail-confirmation");
 });
 
 app.get("/login", (req, res) => {
