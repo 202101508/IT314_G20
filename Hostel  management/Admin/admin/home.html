@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+  <body>
+    
+    <label>
+        <input type="checkbox">
+        <div class="toggle">
+           <span class="top_line common"></span>
+           <span class="middle_line common"></span> 
+           <span class="bottom_line common"></span>
+        </div>
+        <div class="slide">
+            <h1>Menu</h1>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="student_details.html"><i class="fas fa-user"></i>Student Information</a></li>
+                <li><a href="fee_recept.html"><i class="fa-solid fa-receipt"></i>Fee recept</a></li>
+                <li><a href="req_box_admin.html"><i class="fa-solid fa-paperclip"></i></i>Request Box</a></li>
+                <li><a href="vp_admin.html"><i class="fa-solid fa-car"></i></i>Visitation Permission</a></li>
+                <li><a href="emergency_contacts.html"><i class="fa-solid fa-truck-medical"></i></i></i>Emergency Contacts</a></li>
+                <li><a href="upcoming.html"><i class="fa-solid fa-calendar-days"></i>Upcoming Events</a></li>
+            </ul>
+        </div>
+    </label>
+    
+    <!--style="height:200px" navbar class="fixed top"-->
+    <style>
+        .navbar {
+            color: #2170be;
+            background-color:#2170be;
+            max-height: 50px;                  /* add this for nav bar*/
+            margin-top: -24px;
+        }
+        nav .searchbox{
+            display: flex;
+            position:relative;
+            margin: 0 auto;
+            top:23%;
+            left:auto;
+            height: 14;
+            line-height:14;
+        }
+        nav .searchbox input{
+            position: relative;
+            top:0%;
+            left:0%;
+            /* border:none; */
+            /* border:inset; */
+            /* outline:inset; */
+            outline-offset:0cap ;
+            background: #fff;
+            height: 100%;
+            padding: 0 1px;
+            font-size: 15px;
+            width: 200px;
+        }
+        nav .searchbox span{
+            /* block-size: 20px 20px; */
+            /* outline-offset:0cap ; */
+            position:relative;
+            background: #fff;
+            height: 20px;
+            width: 20px;
+            font-size: 14px;
+            width: 14px;
+        }
+        nav .collapse .navbar-nav .nav-item a:hover{
+            color: black;
+            background-color: white;
+            border-radius: 30px;
+            margin: 10px;
+        }
+        nav .collapse .navbar-nav .nav-item a{
+            color:#fff;
+        }
+        nav .collapse .navbar-nav .nav-item .nav-link .material-symbols-outlined{
+            position: relative;
+            font-size: 19px;
+            top:4px;
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 24
+            
+        }
+        /* nav .searchbox .img{
+            
+        } */
+    </style>
+    <nav class="navbar navbar-expand-lg">
+        <!-- <div class="container"> -->
+        <a href="#"
+        class="navbar-brand mb-md-0 h1 text-light"
+        style="font-family:  'Yatra One', cursive;">
+            <!-- <img 
+            class="d-inline-block align-top" 
+            src="images/Free_Sample_By_Wix.jpg" width="30" height="30"> -->
+            HostelEase
+        </a>
+        <button 
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        class="navbar-toggler bg-light-subtle focus-ring-light"
+        aria-controls="navbarNav"
+        aria-expanded="False"
+        aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-md-auto">
+                
+                
+                <li class="nav-item active">
+                    <a href="#" class="nav-link active">
+                        My profile
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="emergency_contacts.html" class="nav-link active">
+                        Emergency Contacts
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#" class="nav-link active">
+                        Help
+                    </a>
+                </li>
+                
+                
+            </ul>
+            <ul class="navbar-nav ms-md-auto">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link active">
+                        Logout
+                        <!-- <img src="images/logout_icon.png" height="14" widht="14">  -->
+                        <span class="material-symbols-outlined">logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <h1>Navbar</h1> -->
+        <!-- </div> -->
+    </nav>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Our Hostel</h2>
+            <p>Your home away from home.</p>
+        </div>
+    </section>
+
+
+   
+</body>
+</html>
