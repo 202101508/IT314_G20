@@ -13,6 +13,19 @@
 	--twitter-color: #1da1f2;
 	--insta-color: #e1306c;
 }
+/* 
+.checkbox-container {
+	display: flex;
+	align-items: center;
+  }
+
+  .checkbox-label {
+	margin-left: 10px;
+  }
+
+  .checkbox-input {
+	margin-right: 5px;
+  } */
 
 * {
 	font-family: "Poppins", sans-serif;

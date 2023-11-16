@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+			<title>Student Request</title>
+		<link href="../styles/admin/req_box_admin.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+			
+	</head>
+	<body>
+
+        <%- include("../partials/side_navbar_admin.ejs")  %>
+
+        <section class="all_section">
+    
+            <div class="qwerty">
+                <div class="text">
+                    Student Request
+                </div>
+                
+            </div>
+
+        
+		
+		<hr />
+		<div class="inbox">
+			<div class="request">
+				<div class="request-header">
+					<div>
+						<h3>Student Request 1</h3>
+						<p>Student Name: Bhavesh Baraiya</p>
+						<p>Student ID: 202101241</p>
+					</div>
+					<div class="buttons">
+						<button class="button issue">Accept</button>
+						<button class="button discard">Discard</button>
+			
+					</div>
+				</div>
+				<p>Request: Tp</p>
+			</div>
+            <div class="request">
+				<div class="request-header">
+					<div>
+						<h3>Student Request 1</h3>
+						<p>Student Name: Bhavesh Baraiya</p>
+						<p>Student ID: 202101241</p>
+					</div>
+					<div class="buttons">
+						<button class="button issue">Accept</button>
+						<button class="button discard">Discard</button>
+		
+					</div>
+				</div>
+				<p>Request: Tp</p>
+			</div>
+
+            <div class="request">
+				<div class="request-header">
+					<div>
+						<h3>Student Request 1</h3>
+						<p>Student Name: Bhavesh Baraiya</p>
+						<p>Student ID: 202101241</p>
+					</div>
+					<div class="buttons">
+						<button class="button issue">Accept</button>
+						<button class="button discard">Discard</button>
+
+					</div>
+				</div>
+				<p>Request: Tp</p>
+			</div>
+
+			<div class="request">
+				<div class="request-header">
+					<div>
+						<h3>Student Request 2</h3>
+						<p>Student Name: Smeet Agrawal</p>
+						<p>Student ID: 202101237</p>
+					</div>
+					<div class="buttons">
+						<button class="button issue">Accept</button>
+						<button class="button discard">Discard</button>
+					</div>
+				</div>
+				<p>Request: timepass</p>
+			</div>
+		</div>
+		<div class="container2">
+            <div class="new-request">
+                <form action="/admin/req_box_records">
+                    <button type="submit">Previous visits</button>
+                </form>
+            </div>
+        </div>
+	</body>
+</html>

@@ -10,6 +10,7 @@ const userSchema = new Schema({
 	username: String,
 	email: String,
 	password: String,
+	isAdmin: String,
 });
 
 userSchema.plugin(passportLocalMongoose);

@@ -21,33 +21,19 @@ const { authenticateUser } = require("./routes/authentication");
 require("./routes/authentication").initializeSession(app);
 require("./routes/vp_admin_request_response")(app, authenticateUser);
 require("./routes/forgot-password")(app);
+require("./routes/student/student_routes")(app, authenticateUser);
+require("./routes/admin/admin_routes")(app, authenticateUser);
 
 app.get("/", (req, res) => {
-	res.render("sign-in");
-	// res.render("mail-confirmation");
+	res.redirect("/login");
 });
 
 app.get("/login", (req, res) => {
-	res.redirect("/");
+	res.render("sign-in");
 });
 
-app.get("/nextPage", authenticateUser, (req, res) => {
-	res.send("Authenticated!");
-});
-
-app.post("/update-profile", (req, res) => {
-	const {
-		studentName,
-		studentId,
-		academicYear,
-		batch,
-		email,
-		gender,
-		bloodGroup,
-		mobileNo,
-	} = req.body;
-
-	res.json({ message: "Profile updated successfully" });
+app.get("/home", authenticateUser, (req, res) => {
+	res.render("student/student_home");
 });
 
 app.listen(port, (err) => {
