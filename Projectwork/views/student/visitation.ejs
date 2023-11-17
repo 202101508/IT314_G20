@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/student/req_box.css">
+    <link rel="stylesheet" href="../../styles/student/req_box.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,131 +29,31 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="th_0">ID</th>
+                            <th class="th_0">No. </th>
                             <th class="th_1">Visition purpose</th>
                             <th class="th_2">Arrival Date</th>
                             <th class="th_3">Arrival Time</th>
+                            <th class="th_3">Departure Time</th>
                             <th class="t_4">Confirmation</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>202101239</td>
-                            <td>Arvindbhai Makwana</td>
-                            <td>2023-10-30</td>
-                            <td>10:30</td>
-                            <td>Parent-Teacher Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>David Johnson</td>
-                            <td>2023-11-05</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>joyboy</td>
-                            <td>2023-09-25</td>
-                            <td>10:30</td>
-                            <td>Not Done</td>
-                        </tr>
-            
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>Arvindbhai Makwana</td>
-                            <td>2023-10-30</td>
-                            <td>10:30</td>
-                            <td>Parent-Teacher Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>David Johnson</td>
-                            <td>2023-11-05</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>joyboy</td>
-                            <td>2023-09-25</td>
-                            <td>10:30</td>
-                            <td>Not Done</td>
-                        </tr>
-            
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>Arvindbhai Makwana</td>
-                            <td>2023-10-30</td>
-                            <td>10:30</td>
-                            <td>Parent-Teacher Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>David Johnson</td>
-                            <td>2023-11-05</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>joyboy</td>
-                            <td>2023-09-25</td>
-                            <td>10:30</td>
-                            <td>Not Done</td>
-                        </tr>
-            
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>Arvindbhai Makwana</td>
-                            <td>2023-10-30</td>
-                            <td>10:30</td>
-                            <td>Parent-Teacher Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>David Johnson</td>
-                            <td>2023-11-05</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>joyboy</td>
-                            <td>2023-09-25</td>
-                            <td>10:30</td>
-                            <td>Not Done</td>
-                        </tr>
-            
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>10:30</td>
-                            <td>Done</td>
-                        </tr>
-            
+                        <% if(locals.data){ %>
+                            <% let counter = 1; %>
+                            <% data.forEach(req => { %>
+                                <% if(req.User._id.equals(id)){ %>
+                                <tr>
+                                    <td><%= counter %></td>
+                                    <td><%= req.purpose %></td>
+                                    <td><%= req.arrivalDate %> </td>
+                                    <td><%= req.arrivalTime %></td>
+                                    <td><%= req.depTime %></td>
+                                    <td><%= req.confirmation %></td>
+                                </tr>
+                        <% counter++; %>
+                                <% } %>
+                                <% }); %>
+                       <% } %>
                     </tbody>
                 </table>
             </div>
@@ -162,7 +62,7 @@
         <div class="container2">
             <div class="new-request">
                 <h2>New Request</h2>
-                <form action="/student/visitation/visitation_button">
+                <form action="/student/<%= username %>/visitation/visitation_button">
                     <button type="submit">Create Request</button>
                 </form>
             </div>

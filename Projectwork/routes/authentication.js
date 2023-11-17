@@ -38,7 +38,7 @@ const initializeSession = (app) => {
 			username: req.body.username,
 			password: req.body.password,
 		});
-        
+
 		passport.authenticate("local", (err, user, info) => {
 			if (err) {
 				console.log(err);
@@ -55,10 +55,10 @@ const initializeSession = (app) => {
 					return res.redirect("/");
 				}
 				// Authentication succeeded, redirect to the next page
-				if(user.isAdmin === "on"){
-					return res.redirect("/admin/home");
+				if (user.isAdmin === "on") {
+					return res.redirect(`/admin/${user.username}/home`);
 				}
-				return res.redirect("/student/home");
+				return res.redirect(`/student/${user.username}/home`);
 			});
 		})(req, res, next);
 	});
@@ -68,7 +68,11 @@ const initializeSession = (app) => {
 		let passwd = req.body.password;
 
 		User.register(
-			{ username: req.body.username, email: req.body.email, isAdmin: req.body.isAdmin },
+			{
+				username: req.body.username,
+				email: req.body.email,
+				isAdmin: req.body.isAdmin,
+			},
 			passwd,
 			(err, user) => {
 				if (err) {

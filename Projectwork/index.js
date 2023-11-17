@@ -23,6 +23,13 @@ require("./routes/vp_admin_request_response")(app, authenticateUser);
 require("./routes/forgot-password")(app);
 require("./routes/student/student_routes")(app, authenticateUser);
 require("./routes/admin/admin_routes")(app, authenticateUser);
+require("./routes/admin/visitation_permission")(app, authenticateUser);
+require("./routes/admin/request_Box")(app, authenticateUser);
+require("./routes/admin/my_profile")(app, authenticateUser);
+require("./routes/student/request_box")(app, authenticateUser);
+require("./routes/student/student_profile")(app, authenticateUser);
+require("./routes/student/visitation_permission")(app, authenticateUser);
+
 
 app.get("/", (req, res) => {
 	res.redirect("/login");

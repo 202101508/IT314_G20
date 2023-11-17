@@ -67,13 +67,11 @@ body {
     background-color: green;
 }
 
-
-
 /* Navigation Bar */
 .slide{
     
     height: 700px;
-    width: 250px;
+    width: 280px;
     position: fixed;
     background-color: #2170be; 
     transition: 0.5s ease;
@@ -217,7 +215,7 @@ form {
 .new-request button {
     width: 200px;
     position: absolute;
-    left: 13%;
+    left: 50%;
     transform: translateX(-50%);
     background-color: #2170be;
     color: white;

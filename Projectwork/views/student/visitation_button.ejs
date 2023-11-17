@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/student/visitation_button.css">
+    <link rel="stylesheet" href="../../../styles/student/visitation_button.css">
     <title>Visitation Permission Request</title>
 </head>
 <body>
     <div id="edit-profile-form">
         <h1>Visitation Permission Request</h1>
-        <form action="#" method="POST">
+        <form action="/student/<%= username %>/visitation/visitation_button" method="POST">
             <label for="student-name">Student Name</label>
             <input type="text" id="student-name" name="student-name" required>
 
             <label for="student-id">Student ID No.</label>
             <input type="text" id="student-id" name="student-id" required>
-
-            <label for="room-no">Hostel Room No.</label>
-            <input type="text" id="room-no" name="room-no" required>
 
             <label for="contact-no">Contact No.</label>
             <input type="text" id="contact-no" name="contact-no" required>
@@ -25,10 +22,10 @@
             <label for="visitors-names">Visitor's Names</label>
             <div id="visitor-names-container">
                 <div class="visitor-name">
-                    <input type="text" name="visitor-name[]" placeholder="Visitor 1" required>
+                    <input type="text" name="visitors[]" placeholder="Visitor 1" required>
                 </div>
                 <div class="visitor-name">
-                    <input type="text" name="visitor-name[]" placeholder="Visitor 2">
+                    <input type="text" name="visitors[]" placeholder="Visitor 2">
                 </div>
             </div>
 
@@ -36,13 +33,13 @@
             <input type="text" id="purpose" name="purpose" required>
 
             <label for="arrival-date">Arrival Date</label>
-            <input type="date" id="arrival-date" name="arrival-date" required>
+            <input type="date" id="arrival-date" name="arrivalDate" required>
 
             <label for="tentative-time">Tentative Time</label>
-            <input type="time" id="tentative-time" name="tentative-time" required>
+            <input type="time" id="tentative-time" name="arrivalTime" required>
 
             <label for="departure-time">Tentative Departure Time</label>
-            <input type="time" id="departure-time" name="departure-time" required>
+            <input type="time" id="departure-time" name="depTime" required>
 
             <input type="submit" value="Submit">
         </form>

@@ -5,17 +5,6 @@ const { Schema } = mongoose;
 
 mongoose.connect("mongodb://127.0.0.1:27017/hostelEase");
 
-//User schema
-const userSchema = new Schema({
-	username: String,
-	email: String,
-	password: String,
-	isAdmin: String,
-});
-
-userSchema.plugin(passportLocalMongoose);
-const User = mongoose.model("User", userSchema);
-
 //Records Schema
 const recordSchema = new Schema({
 	Id: Number,
@@ -24,16 +13,6 @@ const recordSchema = new Schema({
 });
 
 const Record = mongoose.model("Record", recordSchema);
-
-//Fetching records
-async function fetchRecords() {
-	try {
-		const records = await Record.find();
-		return records;
-	} catch (error) {
-		throw error;
-	}
-}
 
 //Inbox schema
 const inboxSchema = new Schema({
@@ -44,25 +23,96 @@ const inboxSchema = new Schema({
 
 const Inbox = mongoose.model("Inbox", inboxSchema);
 
-//Fetching inbox
-async function fetchInbox() {
-	try {
-		const inbox = await Inbox.find();
-		return inbox;
-	} catch (err) {
-		throw err;
-	}
-}
+//Student Details Schema
+const studentDetailsSchema = new Schema({
+	student_name: String,
+	student_id: String,
+	academic_year: String,
+	batch: String,
+	email: String,
+	gender: String,
+	blood_group: String,
+	mobile_no: String,
+});
+
+const studDetailSchema = mongoose.model("studDetails", studentDetailsSchema);
+
+//Admin Details Schema
+const adminDetailsSchema = new Schema({
+	name: String,
+	id: String,
+	joining_year: String,
+	email: String,
+	gender: String,
+	blood_group: String,
+	mobile_no: String,
+});
+
+const adminDetailSchema = mongoose.model("adminDetails", adminDetailsSchema);
+
+//User schema
+const userSchema = new Schema({
+	username: String,
+	email: String,
+	password: String,
+	isAdmin: String,
+	studDetails: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "studDetails",
+	},
+	adminDetails: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "adminDetails",
+	},
+});
+
+userSchema.plugin(passportLocalMongoose);
+const User = mongoose.model("User", userSchema);
+
+//Student Requests Schema
+const requestSchema = new Schema({
+	User: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "User",
+	},
+	subject: String,
+	reqMessage: String,
+	confirmation: String,
+	reqDate: String,
+	confDate: String,
+});
+
+const reqBox = mongoose.model("reqBox", requestSchema);
+
+//Visitation Pass Requests
+const vpRequestSchema = new Schema({
+	User: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "User",
+	},
+	purpose: String,
+	arrivalDate: String,
+	arrivalTime: String,
+	depTime: String,
+	confirmation: String,
+	visitors: [String],
+});
+
+const vp_reqBox = mongoose.model("vp_reqBox", vpRequestSchema);
 
 module.exports = {
 	User,
 	Record,
 	Inbox,
-	fetchInbox,
-	fetchRecords,
+	studDetailSchema,
+	adminDetailSchema,
+	reqBox,
+	vp_reqBox,
 };
 
-// const model = require("./data");
+const model = require("./data");
+
+// model.addStudent(User.studDetails);
 
 // model.addInbox(Inbox);
 // model.addRecords(Record);

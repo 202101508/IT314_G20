@@ -14,7 +14,7 @@
 			referrerpolicy="no-referrer" />
 		<link
 			rel="stylesheet"
-			href="../styles/admin/admin_details.css" />
+			href="../../styles/admin/admin_details.css" />
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -39,6 +39,15 @@
 
 		<section class="all_section">
 			<div class="qwerty">My Profile</div>
+			<div
+				style="z-index: 100; position: absolute; top: 43%; left: 86%"
+				class="edit_button">
+				<a
+					href="/admin/<%= username %>/edit_my_profile"
+					target="_blank"
+					>Edit profile</a
+				>
+			</div>
 			<div class="p_gi">
 				<div class="profile">
 					<div class="row">
@@ -47,14 +56,13 @@
 								class="student_img"
 								src="https://source.unsplash.com/600x300/?student"
 								alt="Student dp" />
-							<h2 class="student_name">Dhruvin Patel</h2>
+							<h2 class="student_name"><%= data.name %></h2>
 						</div>
 						<div class="card_1">
 							<p class="mb-01">
-								<strong class="pr-1">Student ID:</strong>202101496
+								<strong class="pr-1">Student ID: </strong><%= data.id %>
 							</p>
-							<p class="mb-02"><strong class="pr-1">Year:</strong>2021</p>
-							<p class="mb-03"><strong class="pr-1">Batch:</strong>ICT</p>
+							<p class="mb-02"><strong class="pr-1">Joining Year: </strong><%= data.joining_year %></p>
 						</div>
 					</div>
 				</div>
@@ -63,32 +71,27 @@
 						<table class="table1">
 							<tbody>
 								<tr class="table_row">
-									<td class="td"><h2>General Information:</h2></td>
+									<td class="td"><h2>General Information: </h2></td>
 								</tr>
 								<tr class="table_row">
 									<td class="td1">Email ID</td>
 									<td class="td2">:</td>
-									<td class="td3">dhruvinpatel321@gmail.com</td>
-								</tr>
-								<tr class="table_row">
-									<td class="td1">Academic Year</td>
-									<td class="td2">:</td>
-									<td class="td3">2021</td>
+									<td class="td3"><%= data.email %></td>
 								</tr>
 								<tr class="table_row">
 									<td class="td1">Gender</td>
 									<td class="td2">:</td>
-									<td class="td3">M</td>
+									<td class="td3"><%= data.gender %></td>
 								</tr>
 								<tr class="table_row">
 									<td class="td1">Blood Group</td>
 									<td class="td2">:</td>
-									<td class="td3">A +ve</td>
+									<td class="td3"><%= data.blood_group %></td>
 								</tr>
 								<tr class="table_row">
 									<td class="td1">Mobile No.</td>
 									<td class="td2">:</td>
-									<td class="td3">1234567890</td>
+									<td class="td3"><%= data.mobile_no %></td>
 								</tr>
 							</tbody>
 						</table>

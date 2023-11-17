@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/admin/req_box_records.css">
+    <link rel="stylesheet" href="../../styles/admin/req_box_records.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
@@ -30,116 +30,39 @@
             <h2>Previous Requests</h2>
         </div>
         <div class="search-bar">
-            <label for="search">Search:</label>
-            <input type="text" id="search" placeholder="Search requests...">
+            <!-- <label for="search">Search:</label> -->
+            <!-- <input type="text" id="search" placeholder="Search requests..."> -->
         </div>
             <div class="previous-requests">
                 
                 <table>
                     <thead>
                         <tr>
-                            <th class="th_0">Id</th>
+                            <th class="th_0">No. </th>
+                            <th class="th_0">Student Id</th>
                             <th class="th_1">Request</th>
-                            <th class="th_2">Date</th>
+                            <th class="th_2">reqDate</th>
+                            <th class="th_2">confDate</th>
                             <th class="t_3">Confirmation</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>202101239</td>
-                            <td>Arvindbhai Makwana</td>
-                            <td>2023-10-30</td>
-                            <td>Parent-Teacher Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>David Johnson</td>
-                            <td>2023-11-05</td>
-                            <td>Health Checkup</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>joyboy</td>
-                            <td>2023-09-25</td>
-                            <td>Meeting</td>
-                        </tr>
-            
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>Arvindbhai Makwana</td>
-                            <td>2023-10-30</td>
-                            <td>Parent-Teacher Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>David Johnson</td>
-                            <td>2023-11-05</td>
-                            <td>Health Checkup</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>joyboy</td>
-                            <td>2023-09-25</td>
-                            <td>Meeting</td>
-                        </tr>
-            
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>Arvindbhai Makwana</td>
-                            <td>2023-10-30</td>
-                            <td>Parent-Teacher Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>David Johnson</td>
-                            <td>2023-11-05</td>
-                            <td>Health Checkup</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>joyboy</td>
-                            <td>2023-09-25</td>
-                            <td>Meeting</td>
-                        </tr>
-            
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>Meeting</td>
-                        </tr>
-                        <tr>
-                            <td>202101239</td>
-                            <td>jo</td>
-                            <td>2023</td>
-                            <td>Meeting</td>
-                        </tr>
-                        
-                        
+                        <% if(locals.data){ %>
+                            <% let counter = 1; %>
+                            <% data.forEach(req => { %>
+                                <% if(req.confirmation != "Pending"){ %>
+                                    <tr>
+                                        <td><%= counter %></td>
+                                        <td><%= req.User.studDetails.student_id %></td>
+                                        <td><%= req.subject %></td>
+                                        <td><%= req.reqDate %></td>
+                                        <td><%= req.confDate %></td>
+                                        <td><%= req.confirmation %></td>
+                                    </tr>
+                                    <% counter++; %>
+                                    <% } %>
+                            <% }) %>
+                        <% } %>
                     </tbody>
                 </table>
                 

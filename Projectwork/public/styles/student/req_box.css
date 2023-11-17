@@ -159,6 +159,8 @@ td {
 }
 
 .qwerty {
+    top: 0px;
+    margin-top: 22px;
     text-align: center;
     position: fixed;
     width: 97%;

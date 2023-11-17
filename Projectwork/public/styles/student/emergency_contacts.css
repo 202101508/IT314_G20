@@ -136,9 +136,10 @@ input:checked ~ .slide{
     padding: 6px;
     border-radius: 20px;
 }
+
 main {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 7% auto;
     padding: 20px;
 }
 

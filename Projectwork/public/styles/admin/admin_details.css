@@ -14,7 +14,7 @@ body {
 .slide{
     
     height: 700px;
-    width: 250px;
+    width: 280px;
     position: fixed;
     background-color: #2170be; 
     transition: 0.5s ease;
@@ -171,6 +171,35 @@ input:checked ~ .slide{
     padding: 100px;
     margin-top: -50px;
     margin-left: 150px;
+}
+
+.edit_button {
+	display: block;
+	list-style: none;
+	text-decoration: none;
+	width: 140px;
+	top: 310px;
+	left: 1530px;
+	border: none;
+}
+.edit_button a:link,
+a:visited {
+	background-color: #2170be;
+	width: 120px;
+	color: white;
+	text-align: center;
+	border-radius: 20px;
+	height: 35px;
+	font-weight: 500;
+	font-size: 1.2em;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.edit_button a:hover,
+a:active {
+	background-color: #2170be;
+	color: black;
 }
 
 .card_1{

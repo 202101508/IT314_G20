@@ -1,4 +1,4 @@
-<link href="../styles/top_navbar.css" rel="stylesheet" />
+<link href="../../styles/top_navbar.css" rel="stylesheet" />
 
 <nav class="navbar navbar-expand-lg">
     <a
@@ -23,21 +23,21 @@
         <ul class="navbar-nav ms-md-auto">
             <li class="nav-item active">
                 <a
-                    href="/admin/my_profile"
+                    href="/admin/<%= username %>/my_profile"
                     class="nav-link active">
                     My profile
                 </a>
             </li>
             <li class="nav-item active">
                 <a
-                    href="/admin/emergency_contacts"
+                    href="/admin/<%= username %>/emergency_contacts"
                     class="nav-link active">
                     Emergency Contacts
                 </a>
             </li>
             <li class="nav-item active">
                 <a
-                    href="/admin/help"
+                    href="/admin/<%= username %>/help"
                     class="nav-link active">
                     Help
                 </a>

@@ -15,7 +15,7 @@ var mailOptions = {
 	text: "It is from hostelEase.",
 };
 
-console.log(transporter);
+// console.log(transporter);
 
 module.exports = {
 	transporter,
