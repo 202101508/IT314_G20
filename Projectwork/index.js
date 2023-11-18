@@ -29,6 +29,7 @@ require("./routes/admin/my_profile")(app, authenticateUser);
 require("./routes/student/request_box")(app, authenticateUser);
 require("./routes/student/student_profile")(app, authenticateUser);
 require("./routes/student/visitation_permission")(app, authenticateUser);
+require("./routes/admin/fee_receipt")(app, authenticateUser);
 
 
 app.get("/", (req, res) => {

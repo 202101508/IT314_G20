@@ -1,20 +1,24 @@
-/* CSS styles (same as before) */
-body {
-    font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 94%);
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
+body {
+    background-color: #f2f2f2;
+    color: #333;
+}
 
 .slide{
+    
     height: 700px;
     width: 280px;
     position: fixed;
     background-color: #2170be; 
     transition: 0.5s ease;
     transform: translateX(-1000px);
-    margin-top: 80px;
+    margin-top: 97px;
     margin-left: 15px;
     border-radius: 30px;
 }
@@ -42,14 +46,14 @@ ul li a{
 }
 
 ul li a i{
-    width: 40px;   
+    width: 40px;
+    text-align: center;   
     padding: 10px;
 }
 
 ul li:hover a{
     color: black;
     background-color: white;
-    text-align: left;
     border-radius: 30px;
     margin: 10px;
 }
@@ -57,19 +61,19 @@ ul li:hover a{
 input{
     display: none;
     visibility: hidden;
+    
 }
 
 .toggle{
     position: fixed;
     height: 30px;
     width: 30px;
-    top: 33px;
+    top: 34px;
     left: 25px;
     z-index: 1;
     cursor: pointer;
     border-radius: 10px;
     background-color: #2170be;
-    
     
 }
 
@@ -123,62 +127,124 @@ input:checked ~ .slide{
 
 }
 
-/*nav bar*/
+.all_section {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+thead {
+    background-color: #2170be;
+    color: #fff;
+}
+
+th {
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
 
 .qwerty {
     text-align: center;
     position: fixed;
-    height: 58px;
     width: 97%;
     background-color: #2170be;
     font-weight: 700;
     font-size: 2em;
     color: white;
-    margin-top: -230px;
-    margin-left: 20px;
     margin-bottom: 30px;
-    padding: 6px;
-    border-radius: 20px;
-}
-.head{
-      text-align: center;
-   margin-top: 20px;
-    width: 98.3%;
-    background-color: #2170be;
-    font-weight: 700;
-    font-size: 2em;
-    color: white;
-   
     padding: 10px;
     border-radius: 20px;
-
-    
-
 }
+
+.text{
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+
 .container {
-    max-width: 800px;
-    margin-top: 225px;
-    margin-left: 550px;
-  
-
-    
-    padding: 30px; /* Add padding to create space between the text and the border */
-    width: 375px; /* Set the width of the box */
-
+    max-width: 1600px;
+    height: 770px;
+    margin: 0 auto;
     padding: 20px;
-    
-    text-align: center; /* Center-align the text */
-
-   
-    border-radius: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
 }
-button {
-    background-color: #0074d9;
-    color: #fff;
-    border-radius: 20px;
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+#search {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.previous-requests {
+    height: 700px;
+    margin-bottom: 30px;
+    overflow-y: scroll;
+}
+
+.request-item {
+    display: flex;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.green {
+    background-color: #4EA685;
+}
+
+.red {
+    background-color: red;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.new-request button {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2170be;
+    color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
+
+button:hover {
+    background-color: #2170be;
+}
+
+
+
+
+

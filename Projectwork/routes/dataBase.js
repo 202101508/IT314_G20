@@ -55,7 +55,10 @@ const userSchema = new Schema({
 	username: String,
 	email: String,
 	password: String,
-	isAdmin: String,
+	isAdmin: {
+		type: String,
+		default: "off"
+	},
 	studDetails: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "studDetails",
@@ -100,6 +103,17 @@ const vpRequestSchema = new Schema({
 
 const vp_reqBox = mongoose.model("vp_reqBox", vpRequestSchema);
 
+//Fee Receipt Schema
+const receiptSchema = new mongoose.Schema({
+	userid: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+	username: String,
+	semester: String,
+	feePayment: String,
+	date: { type: Date, default: Date.now },
+});
+
+const Receipt = mongoose.model("Receipt", receiptSchema);
+
 module.exports = {
 	User,
 	Record,
@@ -108,6 +122,7 @@ module.exports = {
 	adminDetailSchema,
 	reqBox,
 	vp_reqBox,
+	Receipt,
 };
 
 const model = require("./data");
