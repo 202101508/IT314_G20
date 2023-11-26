@@ -13,10 +13,6 @@ module.exports = (app, authenticateUser) => {
 		res.render("student/student_home", { username: username });
 	});
 
-	app.get("/student/:uName/fee_receipt", authenticateUser, (req, res) => {
-		var username = req.params.uName;
-		res.render("student/fee_receipt", { username: username });
-	});
 
 	app.get(
 		"/student/:uName/emergency_contacts",

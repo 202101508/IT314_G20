@@ -18,6 +18,7 @@ app.use(express.json());
 
 const { authenticateUser } = require("./routes/authentication");
 
+//Intialize routes 
 require("./routes/authentication").initializeSession(app);
 require("./routes/vp_admin_request_response")(app, authenticateUser);
 require("./routes/forgot-password")(app);
@@ -26,10 +27,11 @@ require("./routes/admin/admin_routes")(app, authenticateUser);
 require("./routes/admin/visitation_permission")(app, authenticateUser);
 require("./routes/admin/request_Box")(app, authenticateUser);
 require("./routes/admin/my_profile")(app, authenticateUser);
+require("./routes/admin/fee_receipt")(app, authenticateUser);
 require("./routes/student/request_box")(app, authenticateUser);
 require("./routes/student/student_profile")(app, authenticateUser);
 require("./routes/student/visitation_permission")(app, authenticateUser);
-require("./routes/admin/fee_receipt")(app, authenticateUser);
+require("./routes/student/fee_receipt")(app, authenticateUser);
 
 
 app.get("/", (req, res) => {

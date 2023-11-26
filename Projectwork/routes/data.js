@@ -152,6 +152,23 @@ function addRequest(reqBox, data, uid) {
 		});
 }
 
+//Add new Event in upcoming events
+function addEvent(Event, events, uid) {
+	Event.insertMany([
+		{
+			title: events.title,
+			description: events.description,
+			timestamp: events.timestamp,
+		},
+	])
+		.then(() => {
+			console.log("New event Added in upcoming events by user: ", uid);
+		})
+		.catch((err) => {
+			if (err) throw err;
+		});
+}
+
 //Add new Visitation Permission Request
 function vp_addRequest(vp_reqBox, data, uid) {
 	vp_reqBox
@@ -202,4 +219,5 @@ module.exports = {
 	updateAdminDetails,
 	addRequest,
 	vp_addRequest,
+	addEvent,
 };

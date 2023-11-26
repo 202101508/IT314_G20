@@ -57,7 +57,7 @@ const userSchema = new Schema({
 	password: String,
 	isAdmin: {
 		type: String,
-		default: "off"
+		default: "off",
 	},
 	studDetails: {
 		type: mongoose.Schema.Types.ObjectId,
@@ -114,6 +114,17 @@ const receiptSchema = new mongoose.Schema({
 
 const Receipt = mongoose.model("Receipt", receiptSchema);
 
+// Create a Mongoose schema for events
+const eventSchema = new mongoose.Schema({
+	title: String,
+	description: String,
+	timestamp: Date,
+}); // Create a Mongoose model
+
+eventSchema.index({ timestamp: 1 }, { expireAfterSeconds: 1 * 24 * 60 * 60 });
+// Create a Mongoose model
+const Event = mongoose.model("Event", eventSchema);
+
 module.exports = {
 	User,
 	Record,
@@ -123,11 +134,5 @@ module.exports = {
 	reqBox,
 	vp_reqBox,
 	Receipt,
+	Event,
 };
-
-const model = require("./data");
-
-// model.addStudent(User.studDetails);
-
-// model.addInbox(Inbox);
-// model.addRecords(Record);

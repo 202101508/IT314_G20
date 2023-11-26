@@ -1,12 +1,13 @@
 const session = require("express-session");
 const passport = require("passport");
+const crypto = require("crypto");
 
 const { User } = require("./dataBase");
 
 const initializeSession = (app) => {
 	app.use(
 		session({
-			secret: process.env.SESSION_SECRET,
+			secret: process.env.SESSION_SECRET || crypto.randomBytes(64).toString("hex"),
 			resave: false,
 			saveUninitialized: false,
 		})
@@ -24,6 +25,7 @@ const initializeSession = (app) => {
 
 	//Logout User
 	app.get("/logout", (req, res) => {
+		console.log("Logged out user: ", req.user);
 		req.logout((err) => {
 			if (err) {
 				console.log(err);
