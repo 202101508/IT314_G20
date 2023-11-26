@@ -1,8 +1,10 @@
+/* Reset some default styles */
 body, h1, h2, ul {
     margin: 0;
     padding: 0;
 }
 
+/* Basic styling for body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -15,6 +17,7 @@ body {
     margin: 5px 0;
 }
 
+/* Styling for form */
 #edit-profile-form {
     max-width: 400px;
     margin: 20px auto;
@@ -38,7 +41,7 @@ body {
 }
 
 #edit-profile-form input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #2170be;
     color: white;
     border: none;
     padding: 15px 20px;

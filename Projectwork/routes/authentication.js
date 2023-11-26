@@ -1,12 +1,13 @@
 const session = require("express-session");
 const passport = require("passport");
+const crypto = require("crypto");
 
 const { User } = require("./dataBase");
 
 const initializeSession = (app) => {
 	app.use(
 		session({
-			secret: process.env.SESSION_SECRET,
+			secret: process.env.SESSION_SECRET || crypto.randomBytes(64).toString("hex"),
 			resave: false,
 			saveUninitialized: false,
 		})
@@ -24,6 +25,7 @@ const initializeSession = (app) => {
 
 	//Logout User
 	app.get("/logout", (req, res) => {
+		console.log("Logged out user: ", req.user);
 		req.logout((err) => {
 			if (err) {
 				console.log(err);
@@ -38,7 +40,7 @@ const initializeSession = (app) => {
 			username: req.body.username,
 			password: req.body.password,
 		});
-        
+
 		passport.authenticate("local", (err, user, info) => {
 			if (err) {
 				console.log(err);
@@ -55,7 +57,10 @@ const initializeSession = (app) => {
 					return res.redirect("/");
 				}
 				// Authentication succeeded, redirect to the next page
-				return res.redirect("/nextPage");
+				if (user.isAdmin === "on") {
+					return res.redirect(`/admin/${user.username}/home`);
+				}
+				return res.redirect(`/student/${user.username}/home`);
 			});
 		})(req, res, next);
 	});
@@ -65,7 +70,11 @@ const initializeSession = (app) => {
 		let passwd = req.body.password;
 
 		User.register(
-			{ username: req.body.username, email: req.body.email },
+			{
+				username: req.body.username,
+				email: req.body.email,
+				isAdmin: req.body.isAdmin,
+			},
 			passwd,
 			(err, user) => {
 				if (err) {
@@ -73,7 +82,7 @@ const initializeSession = (app) => {
 					res.redirect("/");
 				} else {
 					passport.authenticate("local")(req, res, () => {
-						res.redirect("/nextPage");
+						res.redirect("/login");
 					});
 				}
 			}

@@ -15,7 +15,7 @@ setTimeout(() => {
 }, 200);
 
 $("#reset").click((event) => {
-	location.assign("/forgot-passwd");
+	location.assign("/forgot-password");
 });
 
 $(".remove").click((event) => {

@@ -1,0 +1,46 @@
+<label>
+	<input id="checkbox" type="checkbox" />
+	<div class="toggle">
+		<span class="top_line common"></span>
+		<span class="middle_line common"></span>
+		<span class="bottom_line common"></span>
+	</div>
+	<div class="slide">
+		<h1 style="color: white">Menu</h1>
+		<ul>
+			<li>
+				<a href="/admin/<%= username %>/home"><i class="fas fa-home"></i>Home</a>
+			</li>
+			<li>
+				<a href="/admin/<%= username %>/my_profile"
+					><i class="fas fa-user"></i>My Profile</a
+				>
+			</li>
+			<li>
+				<a href="/admin/<%= username %>/fee_receipt"
+					><i class="fa-solid fa-receipt"></i>Fee receipt</a
+				>
+			</li>
+			<li>
+				<a href="/admin/<%= username %>/req_box"
+					><i class="fa-solid fa-paperclip"></i>Request Box</a
+				>
+			</li>
+			<li>
+				<a href="/admin/<%= username %>/vp_requests"
+					><i class="fa-solid fa-car"></i>Visitation Permission</a
+				>
+			</li>
+			<li>
+				<a href="/admin/<%= username %>/emergency_contacts"
+					><i class="fa-solid fa-truck-medical"></i>Emergency Contacts</a
+				>
+			</li>
+			<li>
+				<a href="/admin/<%= username %>/upcoming_events"
+					><i class="fa-solid fa-calendar-days"></i>Upcoming Events</a
+				>
+			</li>
+		</ul>
+	</div>
+</label>
