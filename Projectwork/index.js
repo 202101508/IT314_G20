@@ -28,6 +28,7 @@ require("./routes/admin/visitation_permission")(app, authenticateUser);
 require("./routes/admin/request_Box")(app, authenticateUser);
 require("./routes/admin/my_profile")(app, authenticateUser);
 require("./routes/admin/fee_receipt")(app, authenticateUser);
+require("./routes/admin/student_records")(app, authenticateUser);
 require("./routes/student/request_box")(app, authenticateUser);
 require("./routes/student/student_profile")(app, authenticateUser);
 require("./routes/student/visitation_permission")(app, authenticateUser);

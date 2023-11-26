@@ -183,14 +183,18 @@ p {
 }
 
 .container2 {
+	position: fixed;
 	max-width: 700px;
-	height: 120px;
+	height: 80px;
 	margin: 0 auto;
-	margin-top: 35%;
+	margin-top: 3%;
 	padding: 20px;
 	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	top: 82%;
+	left: 35%;
+	width: 30%;
 }
 
 form {
@@ -216,6 +220,12 @@ button:hover {
 
 #eventTimestamp {
 	margin-bottom: 10px;
+}
+
+.container{
+	margin-top: 100px;
+	overflow-y: scroll;
+	height: 510px;
 }
 
 /* Popup container */

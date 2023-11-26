@@ -27,6 +27,7 @@ const Inbox = mongoose.model("Inbox", inboxSchema);
 const studentDetailsSchema = new Schema({
 	student_name: String,
 	student_id: String,
+	room_no: String,
 	academic_year: String,
 	batch: String,
 	email: String,
