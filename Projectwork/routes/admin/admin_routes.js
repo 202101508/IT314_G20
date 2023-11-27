@@ -9,8 +9,6 @@ var {
 	Event,
 } = require("../dataBase");
 
-const axios = require("axios");
-
 module.exports = (app, authenticateUser) => {
 	app.get("/admin/:uName/home", authenticateUser, (req, res) => {
 		var username = req.params.uName;
