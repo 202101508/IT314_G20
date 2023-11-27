@@ -23,16 +23,7 @@ const initializeSession = (app) => {
 	passport.serializeUser(User.serializeUser());
 	passport.deserializeUser(User.deserializeUser());
 
-	//Logout User
-	app.get("/logout", (req, res) => {
-		console.log("Logged out user: ", req.user);
-		req.logout((err) => {
-			if (err) {
-				console.log(err);
-			}
-			res.redirect("/");
-		});
-	});
+	
 
 	//Login User and create session cookies
 	app.post("/login", (req, res, next) => {
@@ -82,11 +73,23 @@ const initializeSession = (app) => {
 					res.redirect("/");
 				} else {
 					passport.authenticate("local")(req, res, () => {
+						console.log("User Added: ", req.body);
 						res.redirect("/login");
 					});
 				}
 			}
 		);
+	});
+
+	//Logout User
+	app.get("/logout", (req, res) => {
+		console.log("Logged out user: ", req.user);
+		req.logout((err) => {
+			if (err) {
+				console.log(err);
+			}
+			res.redirect("/");
+		});
 	});
 };
 

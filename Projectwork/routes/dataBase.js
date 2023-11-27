@@ -5,28 +5,11 @@ const { Schema } = mongoose;
 
 mongoose.connect("mongodb://127.0.0.1:27017/hostelEase");
 
-//Records Schema
-const recordSchema = new Schema({
-	Id: Number,
-	Status: String,
-	Date: Date,
-});
-
-const Record = mongoose.model("Record", recordSchema);
-
-//Inbox schema
-const inboxSchema = new Schema({
-	studName: String,
-	studId: String,
-	reasonForVisit: String,
-});
-
-const Inbox = mongoose.model("Inbox", inboxSchema);
-
 //Student Details Schema
 const studentDetailsSchema = new Schema({
 	student_name: String,
 	student_id: String,
+	room_no: String,
 	academic_year: String,
 	batch: String,
 	email: String,
@@ -127,8 +110,6 @@ const Event = mongoose.model("Event", eventSchema);
 
 module.exports = {
 	User,
-	Record,
-	Inbox,
 	studDetailSchema,
 	adminDetailSchema,
 	reqBox,

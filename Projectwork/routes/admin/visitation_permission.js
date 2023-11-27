@@ -44,8 +44,9 @@ module.exports = (app, authenticateUser) => {
 						model: "studDetails",
 					},
 				});
-				console.log(result[0].User.studDetails.student_id);
+				
 				if (result.length !== 0) {
+					console.log(result[0].User.studDetails.student_id);
 					res.render("admin/vp_records", {
 						username: username,
 						data: result,

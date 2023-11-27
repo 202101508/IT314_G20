@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/admin/new_student.css">
+    <title>Add Student</title>
+</head>
+<body>
+    <div class="common"></div>
+    <div id="edit-profile-form">
+        <h1>Add Student</h1>
+        <form action="/admin/<%= username %>/new_student" method="POST">
+            <label for="student_name">Student Name</label>
+            <input type="text" id="student_name" name="student_name" required>
+
+            <label for="student_id">Student ID</label>
+            <input type="text" id="student_id" name="student_id"   required>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email"   required>
+
+            <label for="room_no">Hostel Room No.</label>
+            <input type="text" id="room_no" name="room_no" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
