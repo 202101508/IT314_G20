@@ -30,8 +30,6 @@ const initializeSession = (app) => {
 	passport.serializeUser(User.serializeUser());
 	passport.deserializeUser(User.deserializeUser());
 
-	
-
 	//Login User and create session cookies
 	app.post("/login", (req, res, next) => {
 		const user = new User({

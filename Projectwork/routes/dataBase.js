@@ -7,7 +7,6 @@ const { Schema } = mongoose;
 	await mongoose.connect(process.env.MONGO_URI);
 })();
 
-
 //Student Details Schema
 const studentDetailsSchema = new Schema({
 	student_name: String,
