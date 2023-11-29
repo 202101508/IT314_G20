@@ -1,15 +1,22 @@
 const session = require("express-session");
 const passport = require("passport");
 const crypto = require("crypto");
+const MongoStore = require("connect-mongo");
 
 const { User } = require("./dataBase");
 
 const initializeSession = (app) => {
 	app.use(
 		session({
-			secret: process.env.SESSION_SECRET || crypto.randomBytes(64).toString("hex"),
-			resave: false,
-			saveUninitialized: false,
+			secret:
+				process.env.SESSION_SECRET || crypto.randomBytes(64).toString("hex"),
+			store: MongoStore.create({
+				mongoUrl: process.env.MONGO_URI,
+				autoRemove: "interval",
+				autoRemoveInterval: 1, // In minutes. Default
+			}),
+			resave: false, // required: force lightweight session keep alive (touch)
+			saveUninitialized: false, // recommended: only save session when data exists
 		})
 	);
 
@@ -22,8 +29,6 @@ const initializeSession = (app) => {
 	// use static serialize and deserialize of model for passport session support
 	passport.serializeUser(User.serializeUser());
 	passport.deserializeUser(User.deserializeUser());
-
-	
 
 	//Login User and create session cookies
 	app.post("/login", (req, res, next) => {
