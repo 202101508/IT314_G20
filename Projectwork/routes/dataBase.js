@@ -3,7 +3,10 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 const { Schema } = mongoose;
 
-mongoose.connect(process.env.MONGO_URI);
+(async ()=>{
+	await mongoose.connect(process.env.MONGO_URI);
+})();
+
 
 //Student Details Schema
 const studentDetailsSchema = new Schema({
