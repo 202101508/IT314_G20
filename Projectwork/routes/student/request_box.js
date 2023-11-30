@@ -56,7 +56,6 @@ module.exports = (app, authenticateUser) => {
 				console.error(error);
 				return;
 			}
-			console.log(`User with id: ${FormData.student-id} made a request.`)
 			res.redirect(`/student/${username}/req_box`);
 		}
 	);
