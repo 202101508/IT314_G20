@@ -30,7 +30,7 @@ $("#toggle.pointer").click((event) => {
 var username = $("#Username");
 function validateUsername(value){
     if(username.val().length <6 || username.val().length>12){
-        username[0].setCustomValidity("Password length should between 6 To 14");
+        username[0].setCustomValidity("Username length should between 6 To 14");
     }
     if(username.val().match(/[!\@\#\$\%\^\&\*\(\)\-\+\=\?\>\<\.\,]/)){
         username[0].setCustomValidity("Only underscore allowed");
