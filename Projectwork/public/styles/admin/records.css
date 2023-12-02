@@ -1,0 +1,238 @@
+/* Apply some basic styling to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+/* Navigation Bar */
+.slide{
+    height: 97%;
+    width: 280px;
+    position:fixed;
+    background-color: #4EA685;
+    transition: 0.5s ease;
+    transform: translateX(-1000px);
+    margin-top: 70px;
+    margin-left: 15px;
+    border-radius: 30px;
+}
+
+.menu{
+    color: white;
+    
+    font-weight: 800;
+    text-align: center;
+    padding: 10px 0;
+    padding-right: 30px;
+    pointer-events: none;
+}
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    color: white;
+    font-weight: 500;
+    padding: 9px 0;
+    display: inline-flex;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.5s ease-out;
+}
+
+ul li a i{
+    width: 40px;
+    text-align: center;   
+    padding: 5px;
+}
+
+ul li:hover a{
+    color: black;
+    background-color: white;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+input{
+    display: none;
+    visibility: hidden;
+    
+}
+
+.toggle{
+    position:fixed;
+    height: 30px;
+    width: 30px;
+    top: 25px;
+    left: 25px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #4EA685;
+    
+    
+}
+
+.toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #fff;   
+    border-radius: 50px;
+    transition: 0.1s ease;
+}
+
+.toggle .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.toggle .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.toggle .bottom_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+input:checked ~ .toggle .top_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+input:checked ~ .toggle .middle_line{
+    opacity: 0;
+    transform: translateX(20px);
+}
+input:checked ~ .toggle .bottom_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .slide{
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+
+}
+
+
+
+.heading{
+    text-align: center;
+    font-family: 'Your Font', sans-serif;
+    font-size: 11px;
+    color: white;
+    
+    width: 1500px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+    letter-spacing: 2px;
+    background-color: #2170be;
+    border: 1px solid ;
+  padding: 0px;
+  margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+   
+}
+.sd{
+   
+
+    background-color: #2170be; /* A deep blue background color */
+    top: 500px;
+    color: #FFF; /* White text color for contrast */
+    margin: 10px auto;
+    border: 1px solid ; /* Matching border color */
+    width: 70%;
+    text-align: center; /* Center-align text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.row1{
+    margin: 5px;
+    padding: 5px;
+    border-bottom: solid;
+    border-color: black;
+}
+.row{
+    padding-left: 10%;
+    margin: 7px;
+    padding: 9px;
+}
+.card_1{
+    padding-top: 5px;
+    
+}
+.mb-0{
+    margin: 3px;
+    padding: 3px;
+}
+.pr-1{
+    margin: 2px;
+    padding:2px;
+}
+
+.student_img{
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.student_name{
+    text-align: center;
+}
+.row{
+    /* position:absolute; */
+    margin: 5px;
+    margin-left:38% ;
+   
+    padding:5px;
+    width: 25%;
+    border-color: black;
+    border-radius: 10px;
+    border: solid;
+}
+
+
+
+
+/* Style the guardian visit records table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+/* Style the table header (thead) */
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Style the table header cells (th) */
+th {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style the table data cells (td) */
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Add alternating row background colors for better readability */
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="../../styles/admin/add_receipt.css" />
+		<title>Add Receipt</title>
+	</head>
+	<body>
+		<% include("../partials/side_navbar_admin.ejs") %>
+
+		<section class="all_section">
+			<div class="qwerty">Add Receipt</div>
+
+			<div class="container">
+				<form
+					action="/admin/<%= username %>/add-receipt"
+					method="post"
+					id="add-receipt-form">
+					<% if(locals.msg){ %>
+					<p
+						class="error-msg"
+						style="color: red">
+						User Not found!
+					</p>
+					<% } %>
+					<label for="username">Username:</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						required />
+
+					<label for="semester">Semester:</label>
+					<input
+						type="text"
+						id="semester"
+						name="semester"
+						required />
+
+					<label for="feePayment">Fee Payment :</label>
+					<input
+						type="text"
+						id="feePayment"
+						name="feePayment"
+						required />
+
+					<label for="date">Date:</label>
+					<input
+						type="date"
+						id="date"
+						name="date"
+						required />
+
+					<label for="userid">Student ID:</label>
+					<input
+						type="text"
+						id="userid"
+						name="userid"
+						required />
+
+					<button type="submit">Add Receipt</button>
+				</form>
+			</div>
+		</section>
+		<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="../../script/add_fee_receipt.js"></script>
+	</body>
+</html>

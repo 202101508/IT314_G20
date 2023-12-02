@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Edit Profile</title>
+		<link
+			rel="stylesheet"
+			href="../../styles/student/edit_student_detail.css" />
+	</head>
+	<body>
+		<form
+			id="edit-profile-form"
+			action="/admin/<%= username %>/edit_my_profile"
+			method="post">
+			<label for="name">Name:</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				value=" <%= data.name%>" />
+
+			<label for="id">ID:</label>
+			<input
+				type="text"
+				id="id"
+				name="id"
+				value="<%= data.id%>" />
+
+			<label for="joining-year">Joining Year:</label>
+			<input
+				type="text"
+				id="joining_year"
+				name="joining_year"
+				value="<%=data.joining_year%>" />
+
+			<label for="email">Email ID:</label>
+			<input
+				type="text"
+				id="email"
+				name="email"
+				value="<%=data.email%>" />
+
+			<label for="gender">Gender:</label>
+			<input
+				type="text"
+				id="gender"
+				name="gender"
+				value="<%=data.gender%>" />
+
+			<label for="blood-group">Blood Group:</label>
+			<input
+				type="text"
+				id="blood_group"
+				name="blood_group"
+				value="<%=data.blood_group%>" />
+
+			<label for="mobile-no">Mobile No.:</label>
+			<input
+				type="text"
+				id="mobile_no"
+				name="mobile_no"
+				value="<%=data.mobile_no%>" />
+
+			<input
+				type="submit"
+				value="Update Profile" />
+		</form>
+		<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="../../script/admin-edit-details.js"></script>
+	</body>
+</html>

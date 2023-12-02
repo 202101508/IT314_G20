@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Edit Profile</title>
+		<link
+			rel="stylesheet"
+			href="../../styles/student/edit_student_detail.css" />
+	</head>
+	<body>
+		<form
+			id="edit-profile-form"
+			action="/student/<%= username %>/edit_student_details"
+			method="post">
+			<label for="student-name">Student Name:</label>
+			<input
+				type="text"
+				id="student_name"
+				name="student_name"
+				value=" <%= data.student_name%>" />
+
+			<label for="student-id">Student ID:</label>
+			<input
+				type="text"
+				id="student_id"
+				name="student_id"
+				value="<%= data.student_id%>" />
+
+			<label for="academic-year">Academic Year:</label>
+			<input
+				type="text"
+				id="academic_year"
+				name="academic_year"
+				value="<%=data.academic_year%>" />
+
+			<label for="batch">Batch:</label>
+			<input
+				type="text"
+				id="batch"
+				name="batch"
+				value="<%=data.batch%>" />
+
+			<label for="email">Email ID:</label>
+			<input
+				type="text"
+				id="email"
+				name="email"
+				value="<%=data.email%>" />
+
+			<label for="gender">Gender:</label>
+			<input
+				type="text"
+				id="gender"
+				name="gender"
+				value="<%=data.gender%>" />
+
+			<label for="blood-group">Blood Group:</label>
+			<input
+				type="text"
+				id="blood_group"
+				name="blood_group"
+				value="<%=data.blood_group%>" />
+
+			<label for="mobile-no">Mobile No.:</label>
+			<input
+				type="text"
+				id="mobile_no"
+				name="mobile_no"
+				value="<%=data.mobile_no%>" />
+
+			<input
+				type="submit"
+				value="Update Profile" />
+		</form>
+		<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="../../script/student-edit-details.js"></script>
+	</body>
+</html>

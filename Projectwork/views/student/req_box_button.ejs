@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles/student/req_box_button.css">
+    <title>Request Box </title>
+</head>
+<body>
+    <div id="edit-profile-form">
+        <h1>Request Box</h1>
+        <form action="" method="POST">
+            <label for="student-name">Student Name</label>
+            <input type="text" id="student-name" name="student-name" required>
+
+            <label for="student-id">Student ID No.</label>
+            <input type="text" id="student-id" name="student-id" required>
+
+            <label for="contact-no">Contact No.</label>
+            <input type="text" id="contact-no" name="contact-no" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="request">Request</label>
+            <input type="text" id="request" name="request" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles/student/req_box_button.css">
+    <style>
+        
+    </style>
+    <title>Request Box</title>
+</head>
+<body>
+    <div id="edit-profile-form">
+        <h1>Request Box</h1>
+        <form action="" method="POST">
+            <label for="student-id">Student ID</label>
+            <input type="text" id="student-id" name="student-id" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="request">Request</label>
+            <textarea id="request" name="request" rows="4" required></textarea>
+
+            <div class="button-container">
+                <input type="button" value="Cancel" onclick="window.location.href='/student/<%= username %>/req_box';">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="../../../script/req_box_button.js"></script>
+</body>
+</html>
+
