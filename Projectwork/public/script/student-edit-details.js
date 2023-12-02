@@ -61,8 +61,10 @@ Gender.keyup(() => validateGender(Gender.val()));
 //Mobile Number Validation
 var MobileNo = $('#mobile_no');
 
-function validateMobile(){
-    if(!(MobileNo.val().length == 10)){
+function validateMobile(value){
+    if (!/^\d+$/.test(value)) {
+        MobileNo[0].setCustomValidity("Only numbers allowed");
+    } else if(!(MobileNo.val().length == 10)){
         MobileNo[0].setCustomValidity("Invalid Mobile Number");
     }
     else {
@@ -77,12 +79,6 @@ MobileNo.keyup(() => validateMobile(MobileNo.val()));
 var Year = $('#academic_year');
 
 function validateYear(){
-    // if(!(Year.val().length == 4)){
-    //     Year[0].setCustomValidity("Invalid Year");
-    // }
-    // else{
-    //     Year[0].setCustomValidity("");
-    // }
     if(Year.val() == "2018" || Year.val() == "2019" || Year.val() == "2020" || Year.val() == "2021" || Year.val() == "2022" || Year.val() == "2023"){
         Year[0].setCustomValidity("");
     }
