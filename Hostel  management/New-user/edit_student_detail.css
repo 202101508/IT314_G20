@@ -1,0 +1,58 @@
+/* Reset some default styles */
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.common {
+    background-color: #333;
+    height: 3px;
+    width: 25px;
+    margin: 5px 0;
+}
+
+
+
+/* Styling for form */
+#edit-profile-form {
+    margin-top: 60px;
+    margin-left: 40%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+#edit-profile-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#edit-profile-form input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#edit-profile-form input[type="submit"] {
+    background-color: #2170be;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-profile-form input[type="submit"]:hover {
+    background-color: #2170be;
+    color: black;
+}

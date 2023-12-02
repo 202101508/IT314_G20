@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div id="popup" class="popup-container">
+
+        
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <style>
+            /* Add your CSS styles here for improved design */
+            .form-group {
+                display: block;
+                margin-bottom: 20px; /* Increase the margin for better spacing */
+            }
+    
+            label {
+                display: block; /* Labels as block elements */
+                margin-bottom: 5px; /* Space between labels and input elements */
+                font-weight: bold; /* Bold label text for emphasis */
+            }
+    
+            input[type="text"],
+            textarea {
+                width: 100%; /* Full width for input fields */
+                padding: 10px; /* Padded input fields for better aesthetics */
+                border: 1px solid #ccc; /* Add a border for input fields */
+                border-radius: 5px; /* Rounded corners for input fields */
+            }
+    
+            button {
+                display: block;
+                margin-top: 70px; /* Space between form fields and the submit button */
+                background-color: #007bff; /* Button background color */
+                color: #fff; /* Text color for the button */
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
+    
+        
+    </main>
+    <div class="popup-content">
+        <span class="close" id="close-popup">&times;</span>
+        <main>
+            <section id="Permission">
+                <h2>Visitation Permission</h2>
+                <form id="request-form" action="submit.php" method="post">
+                    <div class="form-group">
+                        <!-- User's Name -->
+                        <label for="student-name">Your Name:</label>
+                        <input type="text" id="student-name" name="student-name" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- Room Number -->
+                        <label for="StudentID">StudentID:</label>
+                        <input type="text" id="StudentID" name="StudentID" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- Reason for Request -->
+                        <label for="request-description">Reason for request:</label>
+                        <textarea id="request-description" name="request-description" rows="4" required></textarea>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit">Submit Request</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</div>
+<script src="script.js"></script>, initial-scale=1.0"> 
+</body>
+</html>
