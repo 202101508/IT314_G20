@@ -22,10 +22,10 @@
             <label for="visitors-names">Visitor's Names</label>
             <div id="visitor-names-container">
                 <div class="visitor-name">
-                    <input type="text" name="visitors[]" placeholder="Visitor 1" required>
+                    <input type="text" id="visitor1" name="visitors[]" placeholder="Visitor 1" required>
                 </div>
                 <div class="visitor-name">
-                    <input type="text" name="visitors[]" placeholder="Visitor 2">
+                    <input type="text" id="visitor2" name="visitors[]" placeholder="Visitor 2">
                 </div>
             </div>
 
@@ -44,5 +44,8 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="../../../script/visitation_button.js"></script>
 </body>
 </html>
