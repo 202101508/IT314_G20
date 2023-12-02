@@ -61,7 +61,7 @@ const initializeSession = (app) => {
 		})(req, res, next);
 	});
 
-	//Register new user.
+	//Register admin.
 	app.post("/register", (req, res) => {
 		let passwd = req.body.password;
 
@@ -69,7 +69,7 @@ const initializeSession = (app) => {
 			{
 				username: req.body.username,
 				email: req.body.email,
-				isAdmin: req.body.isAdmin,
+				isAdmin: "on",
 			},
 			passwd,
 			(err, user) => {
