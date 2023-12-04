@@ -1,0 +1,48 @@
+/* CSS styles (same as before) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 94%);
+    margin: 0;
+    padding: 0;
+}
+.head{
+      text-align: center;
+   margin-top: 20px;
+    width: 1515px;
+    background-color: #2170be;
+    font-weight: 700;
+    font-size: 2em;
+    color: white;
+   
+    padding: 10px;
+    border-radius: 20px;
+
+    
+
+}
+.container {
+    max-width: 800px;
+    margin-top: 225px;
+    margin-left: 550px;
+  
+
+    
+    padding: 30px; /* Add padding to create space between the text and the border */
+    width: 375px; /* Set the width of the box */
+
+    padding: 20px;
+    
+    text-align: center; /* Center-align the text */
+
+   
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+button {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
