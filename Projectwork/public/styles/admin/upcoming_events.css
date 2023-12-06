@@ -189,9 +189,9 @@ p {
 	margin: 0 auto;
 	margin-top: 3%;
 	padding: 20px;
-	background-color: #fff;
+
 	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 	top: 82%;
 	left: 35%;
 	width: 30%;
@@ -223,9 +223,17 @@ button:hover {
 }
 
 .container{
-	margin-top: 100px;
-	overflow-y: scroll;
-	height: 510px;
+	
+	max-width: 1600px;
+    height: 720px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 80px;
+    margin-bottom: 30px;
+    overflow-y: scroll;	
 }
 
 /* Popup container */
@@ -274,7 +282,7 @@ textarea {
 
 /* Submit button style */
 button[type="submit"] {
-	background: #007bff;
+	background: #2170be;
 	color: #fff;
 	padding: 10px 20px;
 	border: none;
