@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link
+			rel="stylesheet"
+			href="../../styles/student/upcoming_event.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <%- include("../partials/side_navbar_student.ejs") %>
+    
+   <section class="all_section">
+    
+        <div class="qwerty">
+            Event
+        </div>
+
+    <div class="student-panel">
+        <h1>Upcoming Events</h1>
+        <% if(locals.events){ %> <% events.forEach(event => { %>
+            <div class="event">
+                <h2><%= event.title %></h2>
+                <p><%= event.description %></p>
+                <p>
+                    Timestamp: <%= event.timestamp.toISOString().split('T')[0] %> <%=
+                    event.timestamp.toISOString().split('T')[1].slice(0, 5) %>
+                </p>
+            </div>
+            <% }); %> <% } %>
+        <!-- You can repeat the structure for more events -->
+    </div>
+</body>
+</html>

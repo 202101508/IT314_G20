@@ -51,7 +51,7 @@ ul li:hover a{
     margin: 10px;
 }
 
-input{
+#checkbox{
     display: none;
     visibility: hidden;
 }

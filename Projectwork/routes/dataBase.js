@@ -3,7 +3,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 const { Schema } = mongoose;
 
-(async ()=>{
+(async () => {
 	await mongoose.connect(process.env.MONGO_URI);
 })();
 
@@ -21,6 +21,21 @@ const studentDetailsSchema = new Schema({
 });
 
 const studDetailSchema = mongoose.model("studDetails", studentDetailsSchema);
+
+//Emergency Contacts
+const emergencyContactsSchema = new Schema({
+	manager_name: String,
+	manager_contact: String,
+	so_name: String,
+	so_contact: String,
+	me_name: String,
+	me_contact: String,
+});
+
+const emergencyContacts = mongoose.model(
+	"emergencycontact",
+	emergencyContactsSchema
+);
 
 //Admin Details Schema
 const adminDetailsSchema = new Schema({
@@ -118,4 +133,5 @@ module.exports = {
 	vp_reqBox,
 	Receipt,
 	Event,
+	emergencyContacts,
 };

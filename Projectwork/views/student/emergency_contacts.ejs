@@ -39,14 +39,28 @@
 		<div class="qwerty">Emergency Contacts</div>
 		<main>
 			<section class="contact">
-				<h2>Contact Information</h2>
-				<ul>
-					<li><strong>Hostel Manager:</strong> John Doe - (555) 123-4567</li>
-					<li><strong>Security Office:</strong> Jane Smith - (555) 987-6543</li>
-					<li>
-						<strong>Medical Emergency:</strong> Hospital XYZ - (555) 567-8901
-					</li>
-				</ul>
+				<h2 style="padding-top: 20px;">Contact Information</h2>
+				<% if(locals.result){ %>
+					<ul>
+						<li>
+							<strong>Hostel Manager:</strong>
+							<span id="managerName"><%= result.manager_name %></span> -
+							<span id="managerPhone"><%= result.manager_contact %></span>
+						</li>
+						<li>
+							<strong>Security Office:</strong>
+							<span id="securityName"><%= result.so_name %></span> -
+							<span id="securityPhone"><%= result.so_contact %></span>
+						</li>
+						<li>
+							<strong>Medical Emergency:</strong>
+							<span id="hospitalName"><%= result.me_name %></span> -
+							<span id="hospitalPhone"><%= result.me_contact %></span>
+						</li>
+					</ul>
+				<% } else{ %>
+					<p>No data available!</p>
+				<% } %>
 			</section>
 		</main>
 	</body>

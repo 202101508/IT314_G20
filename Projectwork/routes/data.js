@@ -156,6 +156,25 @@ function vp_addRequest(vp_reqBox, data, uid) {
 		});
 }
 
+function generateRandomString() {
+	const specialChars = "!@#$%^&*()_-+=<>?";
+	const numbers = "0123456789";
+
+	let randomString = "";
+
+	randomString += specialChars[Math.floor(Math.random() * specialChars.length)];
+
+	randomString += numbers[Math.floor(Math.random() * numbers.length)];
+
+	for (let i = 0; i < 6; i++) {
+		randomString += String.fromCharCode(97 + Math.floor(Math.random() * 26)); // Using lowercase letters for simplicity
+	}
+
+	console.log("String created: ", randomString);
+
+	return randomString;
+}
+
 module.exports = {
 	addStudentDetails,
 	updateStudentDetails,
@@ -164,4 +183,5 @@ module.exports = {
 	addRequest,
 	vp_addRequest,
 	addEvent,
+	generateRandomString,
 };

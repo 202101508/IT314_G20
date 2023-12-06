@@ -6,6 +6,10 @@ var {
 	Receipt,
 } = require("../dataBase");
 
+var { generateRandomString } = require("../data");
+
+const { transporter, mailOptions } = require("../mail-sender");
+
 module.exports = (app, authenticateUser) => {
 	app.get(
 		"/admin/:uName/student_records",
@@ -15,8 +19,6 @@ module.exports = (app, authenticateUser) => {
 
 			try {
 				const result = await User.find({}).populate("studDetails");
-
-				console.log(result);
 
 				if (result) {
 					res.render("admin/student_records", {
@@ -43,7 +45,6 @@ module.exports = (app, authenticateUser) => {
 
 				if (result) {
 					var resultStudentDetails = result.studDetails || {};
-					console.log("User with studDetails:", resultStudentDetails);
 					res.render("admin/student_details", {
 						data: resultStudentDetails,
 						username: username,
@@ -82,14 +83,27 @@ module.exports = (app, authenticateUser) => {
 						console.log("Student No added.");
 						res.send("Failure!");
 					}
+					const password = generateRandomString();
 
-					console.log("Student Add: ", std[0]._id);
+					//Sending mail to student about login details.
+					mailOptions.to = email;
+					mailOptions.subject = "Your Account Details";
+					mailOptions.text = `Here is your Account details: 
+					\nUsername: ${student_id}\nPassword: ${password}\nRoom No: ${room_no}
+					\nYou can change your password using forgot password.`;
 
-					const password = "1234";
+					transporter
+						.sendMail(mailOptions)
+						.then((info) => {
+							console.log("Email sent: ", info);
+						})
+						.catch((err) => {
+							throw err;
+						});
 
 					User.register(
 						{
-							username: student_name.split(" ")[0] + student_id.slice(-3),
+							username: student_id,
 							email: email,
 							studDetails: std[0]._id,
 							isAdmin: "off",
