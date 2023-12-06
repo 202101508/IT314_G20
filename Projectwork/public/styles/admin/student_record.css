@@ -12,7 +12,7 @@ body {
 
 .slide {
 	height: 700px;
-	width: 250px;
+	width: 280px;
 	position: fixed;
 	background-color: #2170be;
 	transition: 0.5s ease;
@@ -24,9 +24,11 @@ body {
 
 h1 {
 	color: white;
-	font-weight: 800;
+	font-size: 40px;
+	font-weight: 500;
 	text-align: center;
-	padding: 10px 0;
+	padding-top: 12px;
+	padding-bottom: 19px;
 	padding-right: 30px;
 	pointer-events: none;
 }
@@ -48,6 +50,7 @@ ul li a i {
 	width: 40px;
 	text-align: center;
 	padding: 10px;
+	margin-left: 29px;  
 }
 
 ul li:hover a {
@@ -173,7 +176,7 @@ td {
 
 .container {
 	max-width: 1600px;
-	height: 630px;
+	height: 720px;
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #fff;
@@ -183,7 +186,7 @@ td {
 }
 
 .previous-requests {
-	height: 550px;
+	height: 640px;
 	margin-bottom: 30px;
 	overflow-y: scroll;
 }
@@ -204,16 +207,7 @@ td {
 	margin-right: 10px;
 }
 
-.container2 {
-	max-width: 300px;
-	height: 70px;
-	margin: 0 auto;
-	margin-top: 20px;
-	padding: 20px;
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 
 .new-request button {
 	width: 200px;

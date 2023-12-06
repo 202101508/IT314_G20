@@ -128,9 +128,7 @@ input:checked ~ .slide{
 }
 
 /*nav bar*/
-.all_section {
-    padding: 20px;
-}
+
 
 .qwerty {
     text-align: center;

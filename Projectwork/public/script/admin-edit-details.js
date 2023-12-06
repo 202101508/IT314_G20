@@ -1,4 +1,3 @@
-// Name validation
 var studentName = $('#name');
 
 function validateName(value) {

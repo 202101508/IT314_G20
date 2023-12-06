@@ -158,12 +158,13 @@ td {
 	margin-top: 22px;
 	text-align: center;
 	position: fixed;
-	width: 97%;
+	width: 98%;
 	background-color: #2170be;
 	font-weight: 700;
 	font-size: 2em;
 	color: white;
 	margin-bottom: 30px;
+	margin-left: 15px;
 	padding: 10px;
 	border-radius: 20px;
 }

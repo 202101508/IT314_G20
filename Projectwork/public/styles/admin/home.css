@@ -12,7 +12,7 @@ body {
 
 @media (max-width:768px){
     body{
-        padding: 10px;
+        padding: 10px;  
     }
 }
 
@@ -141,7 +141,7 @@ input:checked ~ .slide{
 .hero {
     background-image: url('../../images/background.jpg');
     background-size: cover;
-    height: 94.5vh;
+    height: 94.4vh;
     background-repeat: none;
     background-position: center;
     color: #fff;

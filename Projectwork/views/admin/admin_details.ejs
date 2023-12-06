@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		
 		<meta charset="UTF-8" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
-		<title>Student Details</title>
+		<title>Admin Details</title>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -40,7 +41,7 @@
 		<section class="all_section">
 			<div class="qwerty">My Profile</div>
 			<div
-				style="z-index: 100; position: absolute; top: 43%; left: 86%"
+				style="z-index: 100; position: absolute; top: 80%; left: 46%"
 				class="edit_button">
 				<a
 					href="/admin/<%= username %>/edit_my_profile"
@@ -58,7 +59,7 @@
 								alt="Student dp" />
 							<h2 class="student_name"><%= data.name %></h2>
 						</div>
-						<div class="card_1">
+						<div class="card_1" style=" width: 924px;">
 							<p class="mb-01">
 								<strong class="pr-1">ID: </strong><%= data.id %>
 							</p>
