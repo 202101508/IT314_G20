@@ -4,7 +4,14 @@ const {
 	addRequest,
 	vp_addRequest,
 } = require("../data");
-var { User, studDetailSchema, reqBox, vp_reqBox } = require("../dataBase");
+var {
+	User,
+	studDetailSchema,
+	reqBox,
+	vp_reqBox,
+	Event,
+	emergencyContacts,
+} = require("../dataBase");
 
 //Student Routes
 module.exports = (app, authenticateUser) => {
@@ -13,13 +20,50 @@ module.exports = (app, authenticateUser) => {
 		res.render("student/student_home", { username: username });
 	});
 
-
 	app.get(
 		"/student/:uName/emergency_contacts",
 		authenticateUser,
-		(req, res) => {
+		async (req, res) => {
 			var username = req.params.uName;
-			res.render("student/emergency_contacts", { username: username });
+			try {
+				const result = await emergencyContacts.find({});
+				if (result) {
+					res.render("student/emergency_contacts", {
+						username: username,
+						result: result[0],
+					});
+				} else {
+					res.render("student/emergency_contacts", {
+						username: username,
+					});
+				}
+			} catch (err) {
+				if (err) throw err;
+			}
+		}
+	);
+
+	app.get(
+		"/student/:uName/upcoming_events",
+		authenticateUser,
+		async (req, res) => {
+			var username = req.params.uName;
+			try {
+				const result = await Event.find({});
+				console.log("Events: ", result);
+
+				if (result.length !== 0) {
+					res.render("student/upcoming_event", {
+						username: username,
+						events: result,
+					});
+				} else {
+					res.render("student/upcoming_event", { username: username });
+				}
+			} catch (err) {
+				if (err) throw err;
+				return;
+			}
 		}
 	);
 };
