@@ -1,0 +1,116 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* Basic styling for body */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+}
+
+.common {
+	background-color: #333;
+	height: 3px;
+	width: 25px;
+}
+
+/* Styling for form */
+#edit-profile-form {
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+#edit-profile-form h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#edit-profile-form label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+#edit-profile-form input[type="text"],
+#edit-profile-form input[type="date"],
+#edit-profile-form input[type="time"] {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#edit-profile-form input[type="submit"] {
+	background-color: #2170be;
+	color: white;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#edit-profile-form input[type="submit"]:hover {
+	background-color: #2170be;
+	color: black;
+}
+
+/* Additional styling for the date and time fields */
+#edit-profile-form input[type="date"],
+#edit-profile-form input[type="time"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: white;
+	background-image: url("calendar-icon.png"); /* Replace with your icon image */
+	background-position: right center;
+	background-repeat: no-repeat;
+	padding-right: 25px;
+}
+
+input[type="text"],
+textarea {
+	width: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+#request {
+	grid-column: span 2;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+input[type="submit"],
+input[type="button"] {
+	width: 48%; /* Adjusted width for both buttons */
+	background-color: #4caf50;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+input[type="button"]:hover {
+	background-color: #45a049;
+	color: black;
+}

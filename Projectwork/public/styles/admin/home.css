@@ -1,0 +1,204 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a basic style to the body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width:768px){
+    body{
+        padding: 10px;  
+    }
+}
+
+/* Style the header and navigation */
+/* Navigation Bar */
+.slide{
+    
+    height: 700px;
+    width: 280px;
+    position: fixed;
+    background-color: #2170be; 
+    transition: 0.5s ease;
+    transform: translateX(-1000px);
+    margin-top: 60px;
+    margin-left: 12px;
+    border-radius: 30px;
+}
+
+h1{
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px 0;
+    padding-right: 30px;
+    pointer-events: none;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    color: white;
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.5s ease-out;
+}
+
+ul li a i{
+    width: 40px;   
+    padding: 10px;
+}
+
+ul li:hover a{
+    color: black;
+    background-color: white;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+input{
+    display: none;
+    visibility: hidden;
+}
+
+.toggle{
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    top: 100px;
+    left: 20px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #2170be;
+    
+    
+}
+
+.toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;    
+    background-color: #fff;   
+    border-radius: 50px;
+    transition: 0.1s ease;
+}
+
+.toggle .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.toggle .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.toggle .bottom_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+input:checked ~ .toggle .top_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+input:checked ~ .toggle .middle_line{
+    opacity: 0;
+    transform: translateX(20px);
+}
+input:checked ~ .toggle .bottom_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .slide{
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+
+}
+
+/*nav bar*/
+
+/* Style the hero section */
+.hero {
+    background-image: url('../../images/background.jpg');
+    background-size: cover;
+    height: 94.4vh;
+    background-repeat: none;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 307px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff4500;
+}
+
+/* Style the features section */
+.features {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.feature {
+    margin: 0 20px;
+}
+
+.feature i {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
