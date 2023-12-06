@@ -27,7 +27,7 @@ module.exports = (app) => {
 
 					const secret = process.env.JWT_SECRET + user.salt;
 					const token = jwt.sign(payload, secret, { expiresIn: "15m" });
-					const link = `http://localhost:3000/reset-password/${user.username}/${token}`;
+					const link = `https://hostelease.onrender.com/reset-password/${user.username}/${token}`;
 
 					console.log(link);
 
