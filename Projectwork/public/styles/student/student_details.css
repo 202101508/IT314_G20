@@ -128,7 +128,9 @@ input:checked ~ .slide {
 /* Student Information */
 .all_section {
 	padding: 20px;
-	background-color: #f2f2f2;
+    background-color: #f2f2f2;
+    height: 900px;
+    max-width: 1970px;
 }
 
 .student_img {
@@ -154,7 +156,7 @@ input:checked ~ .slide {
 	text-align: center;
 	position: fixed;
 	height: 58px;
-	width: 97%;
+	width: 98%;
 	background-color: #2170be;
 	font-weight: 700;
 	font-size: 2em;
@@ -182,10 +184,10 @@ input:checked ~ .slide {
 .edit_button a:link,
 a:visited {
 	background-color: #2170be;
-	width: 120px;
+	width: 170px;
 	color: white;
 	text-align: center;
-	border-radius: 20px;
+	border-radius: 5px;
 	height: 35px;
 	font-weight: 500;
 	font-size: 1.2em;

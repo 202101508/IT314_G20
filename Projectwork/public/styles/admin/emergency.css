@@ -124,15 +124,16 @@ input:checked ~ .slide{
 
 .head{
     text-align: center;
- margin-top: 20px;
-  width: 1515px;
-  background-color: #2170be;
-  font-weight: 700;
-  font-size: 2em;
-  color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 97%;
+    background-color: #2170be;
+    font-weight: 700;
+    font-size: 2em;
+    color: white;
  
-  padding: 10px;
-  border-radius: 20px;
+    padding: 10px;
+    border-radius: 20px;
 
   
 
