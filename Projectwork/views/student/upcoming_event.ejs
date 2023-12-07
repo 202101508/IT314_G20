@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
+    <title>Upcoming Events</title>
     <link
 			rel="stylesheet"
 			href="../../styles/student/upcoming_event.css" />
@@ -16,11 +16,10 @@
    <section class="all_section">
     
         <div class="qwerty">
-            Event
+            Upcoming Events
         </div>
 
     <div class="student-panel">
-        <h1>Upcoming Events</h1>
         <% if(locals.events){ %> <% events.forEach(event => { %>
             <div class="event">
                 <h2><%= event.title %></h2>
